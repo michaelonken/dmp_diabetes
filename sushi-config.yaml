@@ -3,28 +3,28 @@
 
 # Package name
 # https://confluence.hl7.org/display/FHIR/NPM+Package+Specification#NPMPackageSpecification-Packagename
-id: ch.fhir.ig.ch-ig
-canonical: http://fhir.ch/ig/ch-ig
-name: CH_IG
-title: "CH IG (R4)"
-description: Implementation Guide CH IG (R4) for ...
+id: de.deutsche-diabetes-gesellschaft.fhir.ig.dmp_diabetes
+canonical: http://deutsche-diabetes-gesellschaft.de/fhir/ig/dmp_diabetes
+name: FHIR IG for Diabetes DMP in Germany
+title: "Diabetes DMP IG (R4)"
+description: "This Implementation Guide aims at modelling the current Disease Management Program (DMP) documents used in Germany for Diabetes. The project is work in progress."
 status: draft
 license: CC-BY-SA-4.0
 copyright: CC-BY-SA-4.0
-jurisdiction: urn:iso:std:iso:3166#CHE
-date: 2021-12-03
+jurisdiction: urn:iso:std:iso:3166#DEU
+date: 2022-03-10
 version: 0.1.0
 fhirVersion: 4.0.1
-copyrightYear: 2021+
+copyrightYear: 2022+
 # https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters -> Parameter: releaselabel
-releaseLabel: CI Build 
+releaseLabel: CI Build
 publisher:
-  name: HL7 Switzerland
+  name: Open Connections
 contact:
-  name: HL7 Switzerland
+  name: Open Connections
   telecom:
     system: url
-    value: https://www.hl7.ch/
+    value: https://www.deutsche-diabetes-gesellschaft.de/
 
 dependencies:
   ch.fhir.ig.ch-core: 2.0.0
@@ -44,5 +44,5 @@ pages:
 
 resources:
   CodeSystem/ch-ig-example-translation:
-    name: CH IG Example Translation
+    name: DDG IG Example Translation
     exampleBoolean: false
