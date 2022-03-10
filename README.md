@@ -1,4 +1,4 @@
-# Diabetes DMP on FHIR
+# FHIR IG: Diabetes DMP for Germany
 
 This project aims at modelling the current version of Germany's DMP (Disease Management Program) documents for Diabetes Mellitus Type 2 in FHIR.
 
