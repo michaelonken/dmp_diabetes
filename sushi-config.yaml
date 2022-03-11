@@ -24,7 +24,7 @@ contact:
   name: Open Connections
   telecom:
     system: url
-    value: https://www.deutsche-diabetes-gesellschaft.de/
+    value: https://www.open-cnonections.de/
 
 dependencies:
   ch.fhir.ig.ch-core: 2.0.0
