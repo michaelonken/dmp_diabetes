@@ -16,7 +16,24 @@ Description: "Planning for further treatment of the patient"
 * ^context.expression = "Composition"
 * . ^short = "DDG DMP Treatment Planning"
 * . ^definition = "Planning for further treatment of the patient"
-// * value[x] 1..
-// * valueReference 1..1
-// * valueReference only Reference(CHCorePractitionerRole or CHCorePatient or RelatedPerson)
-// * valueReference ^short = "valueReference"
+* extension contains
+    patientRequestedInformationTopic 0..3 MS and
+    documentationInteveral 1..1 MS and
+    hba1cTargetReached 1..1 MS and
+    treatmentAtDiabeticFootSyndromInstitution 1..1 MS and
+    outpatientHospitalAdmissionForDiabetes 1..1 MS
+* extension[patientRequestedInformationTopic] ^short = "Vom Patienten gewünschte Informationsangebote der Krankenkasse"
+* extension[patientRequestedInformationTopic].value[x] only Coding
+* extension[patientRequestedInformationTopic].valueCoding from DdgDmpPatientRequestedInformationTopic (required)
+* extension[documentationInteveral] ^short = "Dokumentationsintervall"
+* extension[documentationInteveral].value[x] only Coding
+* extension[documentationInteveral].valueCoding from DdgDmpDocumentationInterval (required)
+* extension[hba1cTargetReached] ^short = "HbA1c-Zielwert"
+* extension[hba1cTargetReached].value[x] only Coding
+* extension[hba1cTargetReached].valueCoding from DdgDmpHba1cValueReached (required)
+* extension[treatmentAtDiabeticFootSyndromInstitution] ^short = "Behandlung/Mitbehandlung in einer für das Diabetische Fußsyndrom qualifizierten Einrichtung"
+* extension[treatmentAtDiabeticFootSyndromInstitution].value[x] only Coding
+* extension[treatmentAtDiabeticFootSyndromInstitution].valueCoding from DdgDmpYesNoPlanned (required)
+* extension[outpatientHospitalAdmissionForDiabetes] ^short = "Diabetesbezogene stationäre Einweisung"
+* extension[outpatientHospitalAdmissionForDiabetes].value[x] only Coding
+* extension[outpatientHospitalAdmissionForDiabetes].valueCoding from DdgDmpYesNoPlanned (required)

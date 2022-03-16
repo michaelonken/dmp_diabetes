@@ -15,9 +15,6 @@ must be structured in the Composition as the first entry of the document."""
 * . ^short = "DDG DMP Composition"
 * text 0..1 MS // TODO: Optionale Zusammenfassung des Dokuments als Fließtext
 * text ^short = "Narrative text of the composition"
-* extension contains
-    DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
-* extension[treatmentPlanning] ^short = "Follow-up treatment planning for this patient"
 * status MS
 * type MS
 * type = $lnc#33248-6 "Diabetes Status" (exactly)
@@ -89,3 +86,8 @@ must be structured in the Composition as the first entry of the document."""
 * section[originalRepresentation].entry only Reference(Binary)
 * section[originalRepresentation].entry ^short = "The DMP PDF has to be in PDF/A-1 or PDF/A-2 format."
 * section[originalRepresentation].section ..0
+
+// Further treatment planning
+* extension contains
+    DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
+* extension[treatmentPlanning] ^short = "Follow-up treatment planning for this patient"
