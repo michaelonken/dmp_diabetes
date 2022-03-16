@@ -3,8 +3,8 @@
 
 # Package name
 # https://confluence.hl7.org/display/FHIR/NPM+Package+Specification#NPMPackageSpecification-Packagename
-id: de.deutsche-diabetes-gesellschaft.fhir.ig.dmp_diabetes
-canonical: http://deutsche-diabetes-gesellschaft.de/fhir/ig/dmp_diabetes
+id: de.deutsche-diabetes-gesellschaft.fhir.ig.dmp-diabetes
+canonical: http://deutsche-diabetes-gesellschaft.de/fhir/ig/dmp-diabetes
 name: FHIR IG for Diabetes DMP in Germany
 title: "Diabetes DMP IG (R4)"
 description: "This Implementation Guide aims at modelling the current Disease Management Program (DMP) documents used in Germany for Diabetes. The project is work in progress."
@@ -24,10 +24,10 @@ contact:
   name: Open Connections
   telecom:
     system: url
-    value: https://www.open-cnonections.de/
+    value: https://www.open-connections.de/
 
 dependencies:
-  ch.fhir.ig.ch-core: 2.0.0
+  # ch.fhir.ig.ch-core: 2.0.0
 
 pages:
   index.md:

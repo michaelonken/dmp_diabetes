@@ -12,7 +12,7 @@ Description: "Base definition for a document with the DDG profiles."
 * ^contact.telecom.value = "https://www.open-connections.de/"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
-* . ^short = "DDG Core Documnt"
+* . ^short = "DDG Core Document"
 * identifier 1..
 * identifier.system 1..
 * identifier.value 1..
