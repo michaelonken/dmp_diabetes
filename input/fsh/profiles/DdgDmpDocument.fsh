@@ -27,5 +27,5 @@ The DDG DMP exchange format is defined as a document type corresponding to a Bun
 * link ..0
 * entry MS
 * entry[Composition] MS
-* entry[Composition].resource only DDGCoreComposition
+* entry[Composition].resource only DDGDmpComposition
 * entry[Composition].resource MS

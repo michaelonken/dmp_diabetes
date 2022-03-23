@@ -16,7 +16,6 @@ Description: "Base definition for a Composition with the DDG Core profiles."
 * subject only Reference(Patient)
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the IPS the subject is always the patient."
 * subject.reference 1..
-// TODO disable? * encounter only Reference(DDGCoreEncounter)
 * author only Reference(Practitioner or Organization)
 // Disable attester?
 // * author.reference 1..

@@ -15,7 +15,7 @@ must be structured in the Composition as the first entry of the document."""
 * . ^short = "DDG DMP Composition"
 * text 0..1 MS // TODO: Optionale Zusammenfassung des Dokuments als Fließtext
 * text ^short = "Narrative text of the composition"
-* status MS
+* status = #final
 * type MS
 * type = $lnc#33248-6 "Diabetes Status" (exactly)
 * type ^short = "Precise type of clinical document"
@@ -53,31 +53,35 @@ must be structured in the Composition as the first entry of the document."""
 * section[documentation].entry ^slicing.discriminator.path = "resolve()"
 * section[documentation].entry ^slicing.rules = #open
 * section[documentation].entry contains
-    Patient 1..1 MS and
-    Consent 1..1 MS and
+    patient 1..1 MS and
+    consentEda 1..1 MS and
+    consentRegistry 1..1 MS and
     // TODO: "Einschreibung wegen?" with values "Asthma bronchiale KHK Diabetes mellitus Typ 1 Diabetes mellitus Typ 2 COPD Chronische Herzinsuffizienz Depression chronischer Rückenschmerz Osteoporose"
-    MedicalHistory 1..1 MS and // TODO Best wording for "Anamnese- und Befunddaten"? Also this should probably also contain "Relevante Ereignisse" from DMP
-    Medications 1..1 MS and
-    Trainings 1.. MS
-* section[documentation].entry[Patient] only Reference(DDGDmpPatient)
-* section[documentation].entry[Patient] ^short = "Patient"
-* section[documentation].entry[Patient].reference 1..1 MS
-* section[documentation].entry[Consent] only Reference(DDGDmpConsent)
-* section[documentation].entry[Consent] ^short = "Consent"
-* section[documentation].entry[Consent].reference 1..1 MS
-* section[documentation].entry[MedicalHistory] only Reference(DDGDmpMedicalHistory)
-* section[documentation].entry[MedicalHistory] ^short = "Medical History"
-* section[documentation].entry[MedicalHistory].reference 1.. MS
-* section[documentation].entry[Trainings] only Reference(DDGDmpTraining)
-* section[documentation].entry[Trainings] ^short = "Training(s)"
-* section[documentation].entry[Trainings].reference 1.. MS
+    medicalHistory 1..1 MS and // TODO Best wording for "Anamnese- und Befunddaten"? Also this should probably also contain "Relevante Ereignisse" from DMP
+    medications 1..1 MS and
+    trainings 1.. MS
+* section[documentation].entry[patient] only Reference(DDGDmpPatient)
+* section[documentation].entry[patient] ^short = "Patient"
+* section[documentation].entry[patient].reference 1..1 MS
+* section[documentation].entry[consentEda] only Reference(DDGDmpConsentEda)
+* section[documentation].entry[consentEda] ^short = "Consent for eDA"
+* section[documentation].entry[consentEda].reference 1..1 MS
+* section[documentation].entry[consentRegistry] only Reference(DDGDmpConsentRegistry)
+* section[documentation].entry[consentRegistry] ^short = "Consent for Registry"
+* section[documentation].entry[consentRegistry].reference 1..1 MS
+* section[documentation].entry[medicalHistory] only Reference(DDGDmpMedicalHistory)
+* section[documentation].entry[medicalHistory] ^short = "Medical History"
+* section[documentation].entry[medicalHistory].reference 1.. MS
+* section[documentation].entry[trainings] only Reference(DDGDmpTraining)
+* section[documentation].entry[trainings] ^short = "Training(s)"
+* section[documentation].entry[trainings].reference 1.. MS
 
 * section[documentation].section ..0
 
 // Details on section "originalPresentation" for including the original PDF if available
 * section[originalRepresentation] ^short = "Contains the document's information in PDF format"
 * section[originalRepresentation].title 1.. MS
-* section[originalRepresentation].title ^short = "PDF representation of this document"
+* section[originalRepresentation].title ^short = "Title of the attached document"
 * section[originalRepresentation].code 1.. MS
 * section[originalRepresentation].code = $lnc#55108-5 "Clinical presentation"
 * section[originalRepresentation].text 1.. MS
@@ -86,6 +90,7 @@ must be structured in the Composition as the first entry of the document."""
 * section[originalRepresentation].entry only Reference(Binary)
 * section[originalRepresentation].entry ^short = "The DMP PDF has to be in PDF/A-1 or PDF/A-2 format."
 * section[originalRepresentation].section ..0
+
 
 // Further treatment planning
 * extension contains
