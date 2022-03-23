@@ -143,8 +143,8 @@ must be structured in the Composition as the first entry of the document."""
 * section[originalRepresentation].section ..0
 
 
-// // Further treatment planning and enrollment reason
-// * extension contains
-//     DDGDmpEnrollmentReason named enrollmentReason 1.. MS and // TODO: Or 1..1?
-//     DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
-//     // and DDGDmpMedicalHistory named medicalHistory 1.. MS
+// Further treatment planning and enrollment reason
+* extension contains
+    DDGDmpEnrollmentReason named enrollmentReason 1.. MS and // TODO: Or 1..1?
+    DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
+    // and DDGDmpMedicalHistory named medicalHistory 1.. MS
