@@ -7,4 +7,7 @@ This is the current version of the FHIR IG for **Diabetes DMP (Diseas Management
 
 [GitHub Repository](https://github.com/michaelonken/dmp_diabetes)
 
+[Current rendering of Implementation Guide](https://www.open-connections.de/dmp_diabetes/).
+The linked version is an early draft and might be out of sync with the git repository (i.e. no "Continuous Build").
+
 **Download**: You can download this implementation guide in the [NPM package](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification) format from [here](package.tgz).

@@ -57,8 +57,8 @@ must be structured in the Composition as the first entry of the document."""
     consentEda 1..1 MS and
     consentRegistry 1..1 MS and
     // TODO: "Einschreibung wegen?" with values "Asthma bronchiale KHK Diabetes mellitus Typ 1 Diabetes mellitus Typ 2 COPD Chronische Herzinsuffizienz Depression chronischer Rückenschmerz Osteoporose"
-    medicalHistory 1..1 MS and // TODO Best wording for "Anamnese- und Befunddaten"? Also this should probably also contain "Relevante Ereignisse" from DMP
-    medications 1..1 MS and
+    medicalHistory 1.. MS and // TODO Best wording for "Anamnese- und Befunddaten"? Also this should probably also contain "Relevante Ereignisse" from DMP
+    medications 1.. MS and
     trainings 1.. MS
 * section[documentation].entry[patient] only Reference(DDGDmpPatient)
 * section[documentation].entry[patient] ^short = "Patient"
@@ -71,10 +71,14 @@ must be structured in the Composition as the first entry of the document."""
 * section[documentation].entry[consentRegistry].reference 1..1 MS
 * section[documentation].entry[medicalHistory] only Reference(DDGDmpMedicalHistory)
 * section[documentation].entry[medicalHistory] ^short = "Medical History"
-* section[documentation].entry[medicalHistory].reference 1.. MS
+* section[documentation].entry[medicalHistory].reference 1..1 MS
+* section[documentation].entry[medications] only Reference(DDGDmpMedicalHistory)
+* section[documentation].entry[medications] ^short = "Medical History"
+* section[documentation].entry[medications].reference 1..1 MS
+
 * section[documentation].entry[trainings] only Reference(DDGDmpTraining)
 * section[documentation].entry[trainings] ^short = "Training(s)"
-* section[documentation].entry[trainings].reference 1.. MS
+* section[documentation].entry[trainings].reference 1..1 MS
 
 * section[documentation].section ..0
 
@@ -92,7 +96,9 @@ must be structured in the Composition as the first entry of the document."""
 * section[originalRepresentation].section ..0
 
 
-// Further treatment planning
+// Further treatment planning and enrollment reason
 * extension contains
+    DDGDmpEnrollmentReason named enrollmentReason 1.. MS and // TODO: Or 1..1?
     DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
-* extension[treatmentPlanning] ^short = "Follow-up treatment planning for this patient"
+// * extension[treatmentPlanning] ^short = "Follow-up treatment planning for this patient"
+// * extension[enrollmentReason] ^short = "Reason why the patient got enrolled into DMP"

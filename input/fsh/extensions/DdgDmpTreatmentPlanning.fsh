@@ -22,6 +22,10 @@ Description: "Planning for further treatment of the patient"
     hba1cTargetReached 1..1 MS and
     treatmentAtDiabeticFootSyndromInstitution 1..1 MS and
     outpatientHospitalAdmissionForDiabetes 1..1 MS
+* extension[patientRequestedInformationTopic] only Extension
+* extension[documentationInteveral] only Extension
+* extension[hba1cTargetReached] only Extension
+* extension[outpatientHospitalAdmissionForDiabetes] only Extension
 * extension[patientRequestedInformationTopic] ^short = "Vom Patienten gewünschte Informationsangebote der Krankenkasse"
 * extension[patientRequestedInformationTopic].value[x] only Coding
 * extension[patientRequestedInformationTopic].valueCoding from DdgDmpPatientRequestedInformationTopic (required)

@@ -13,7 +13,7 @@ license: CC-BY-SA-4.0
 copyright: CC-BY-SA-4.0
 jurisdiction: urn:iso:std:iso:3166#DEU
 date: 2022-03-10
-version: 0.1.0
+version: 0.0.1
 fhirVersion: 4.0.1
 copyrightYear: 2022+
 # https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters -> Parameter: releaselabel
