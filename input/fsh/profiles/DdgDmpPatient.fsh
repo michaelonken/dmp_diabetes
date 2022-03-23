@@ -13,3 +13,14 @@ Description: "DDG Patient participating in DMP."
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Patient"
+* identifier 1..1 MS
+* active 0..1 // TODO: only allow "true" (bool)
+* name 1..1 MS
+* gender 1..1 MS
+* birthDate 1..1 MS
+* address 0..1 MS // TODO: Should something be required (1..x)?
+  * text 0..1 MS
+  * line 0.. MS
+  * city 0..1 MS
+  * postalCode 0..1 MS
+  * country 0..1 MS
