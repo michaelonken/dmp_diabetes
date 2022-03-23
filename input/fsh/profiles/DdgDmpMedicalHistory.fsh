@@ -13,3 +13,5 @@ Description: "DDG Medical History in DMP documents"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Medical History"
+* status = #final
+

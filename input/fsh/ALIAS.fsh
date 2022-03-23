@@ -2,4 +2,6 @@
 Alias:   $lnc =                         http://loinc.org
 Alias:   $sct =                         http://snomed.info/sct
 
-Alias: $ech-10-linetype = http://fhir.ch/ig/ch-core/ValueSet/ech-10-linetype
+Alias: $BodyWeight = http://hl7.org/fhir/StructureDefinition/bodyweight
+Alias: $BodyHeight = http://hl7.org/fhir/StructureDefinition/bodyheight
+Alias: $BloodPressure = http://hl7.org/fhir/StructureDefinition/bp

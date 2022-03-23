@@ -23,6 +23,7 @@ must be structured in the Composition as the first entry of the document."""
 * category = $lnc#33248-6 "Diabetes Status"
 * category ^short = "High-level kind of a clinical document at a macro level"
 * subject 1..1 MS
+* subject only Reference(DDGDmpPatient)
 * subject ^short = "Patient being subject of this document"
 * author 1..1 MS
 * author only Reference(DDGDmpPractitioner)
@@ -37,50 +38,96 @@ must be structured in the Composition as the first entry of the document."""
 * section ^slicing.discriminator.path = "code"
 * section ^slicing.rules = #open
 * section contains
-    documentation 1..1 MS and
-    originalRepresentation 0..1 MS // TODO Only optionally embed PDF?
-
-// Details on section "documentation"
-
-* section[documentation] ^short = "Contains the DMP data"
-* section[documentation].title 1.. MS
-* section[documentation].title ^short = "DMP Data"
-* section[documentation].code 1.. MS
-* section[documentation].code = $lnc#33248-6 "Diabetes Status"
-* section[documentation].text 0..1
-* section[documentation].entry MS
-* section[documentation].entry ^slicing.discriminator.type = #profile
-* section[documentation].entry ^slicing.discriminator.path = "resolve()"
-* section[documentation].entry ^slicing.rules = #open
-* section[documentation].entry contains
-    patient 1..1 MS and
     consentEda 1..1 MS and
     consentRegistry 1..1 MS and
     // TODO: "Einschreibung wegen?" with values "Asthma bronchiale KHK Diabetes mellitus Typ 1 Diabetes mellitus Typ 2 COPD Chronische Herzinsuffizienz Depression chronischer Rückenschmerz Osteoporose"
     medicalHistory 1.. MS and // TODO Best wording for "Anamnese- und Befunddaten"? Also this should probably also contain "Relevante Ereignisse" from DMP
     medications 1.. MS and
-    trainings 1.. MS
-* section[documentation].entry[patient] only Reference(DDGDmpPatient)
-* section[documentation].entry[patient] ^short = "Patient"
-* section[documentation].entry[patient].reference 1..1 MS
-* section[documentation].entry[consentEda] only Reference(DDGDmpConsentEda)
-* section[documentation].entry[consentEda] ^short = "Consent for eDA"
-* section[documentation].entry[consentEda].reference 1..1 MS
-* section[documentation].entry[consentRegistry] only Reference(DDGDmpConsentRegistry)
-* section[documentation].entry[consentRegistry] ^short = "Consent for Registry"
-* section[documentation].entry[consentRegistry].reference 1..1 MS
-* section[documentation].entry[medicalHistory] only Reference(DDGDmpMedicalHistory)
-* section[documentation].entry[medicalHistory] ^short = "Medical History"
-* section[documentation].entry[medicalHistory].reference 1..1 MS
-* section[documentation].entry[medications] only Reference(DDGDmpMedicalHistory)
-* section[documentation].entry[medications] ^short = "Medical History"
-* section[documentation].entry[medications].reference 1..1 MS
+    trainings 1.. MS and
+    originalRepresentation 0..1 MS // TODO Only optionally embed PDF?
 
-* section[documentation].entry[trainings] only Reference(DDGDmpTraining)
-* section[documentation].entry[trainings] ^short = "Training(s)"
-* section[documentation].entry[trainings].reference 1..1 MS
+// Details on section "documentation"
 
-* section[documentation].section ..0
+* section[consentEda].entry 1..1 MS
+* section[consentEda].entry ^short = "Consent participation in eDA"
+* section[consentEda].entry only Reference(DDGDmpConsentEda)
+
+* section[consentRegistry].entry 1..1 MS
+* section[consentRegistry].entry ^short = "Consent for participation in research registry"
+* section[consentRegistry].entry only Reference(DDGDmpConsentRegistry)
+
+* section[medicalHistory].entry 1.. MS
+* section[medicalHistory].entry ^short = "Medical history and status of the patient"
+
+* section[medications].entry 1.. MS
+* section[medications].entry ^short = "Medications of the patient"
+* section[medications].entry only Reference(DDGDmpMedicalHistory)
+
+* section[trainings].entry 1.. MS
+* section[medications].entry ^short = "Diabetes-related trainings"
+* section[trainings].entry only Reference(DDGDmpTraining)
+
+* section[medicalHistory].section ^slicing.discriminator.type = #pattern
+* section[medicalHistory].section ^slicing.discriminator.path = "code"
+* section[medicalHistory].section ^slicing.rules = #open
+* section[medicalHistory].section contains // TODO: Define optionalities
+    bodyWeight 1..1 MS and
+    bodyHeight 1..1 MS and
+    smokingStatus 1..1 MS and
+    bloodPressure 1..1 MS
+
+
+
+* section[medicalHistory].section[bodyWeight].entry 1..1 MS
+* section[medicalHistory].section[bodyWeight].entry only Reference($BodyWeight)
+* section[medicalHistory].section[bodyHeight].entry 1..1 MS
+* section[medicalHistory].section[bodyHeight].entry only Reference($BodyHeight)
+// * section[medicalHistory].section[smokingStatus].entry 1..1 MS
+// * section[medicalHistory].section[smokingStatus].entry only Reference()
+* section[medicalHistory].section[bloodPressure].entry 1..1 MS
+* section[medicalHistory].section[bloodPressure].entry only Reference($BloodPressure)
+
+// TODO:
+// - Begleiterkrankungen
+// - HbA1c
+// - Pathologische Urin-Albumin-Ausscheidung
+// - eGFR
+// - Pulsstatus
+// - Sensibilitätsprüfung
+// - Weiteres Risiko für Ulcus
+// - Ulkus
+// - (Wund)Infektion
+// - Injektionsstellen (bei Insulintherapie)
+// - Intervall für künftige Fußinspektionen (bei Patientinnen und Patienten ab dem vollendeten 18. Lebensjahr)
+// - Spätfolgen
+
+
+
+// * section[documentation].entry[consentEda] ^short = "Consent for eDA"
+// * section[documentation].entry[consentEda].reference 1..1 MS
+// * section[documentation].entry[consentRegistry] only Reference(DDGDmpConsentRegistry)
+// * section[documentation].entry[consentRegistry] ^short = "Consent for Registry"
+// * section[documentation].entry[consentRegistry].reference 1..1 MS
+// * section[documentation].entry[medications] only Reference(DDGDmpMedicalHistory)
+// * section[documentation].entry[medications] ^short = "Medications"
+// * section[documentation].entry[medications].reference 1..1 MS
+// * section[documentation].entry[trainings] only Reference(DDGDmpTraining)
+// * section[documentation].entry[trainings] ^short = "Training(s)"
+// * section[documentation].entry[trainings].reference 1..1 MS
+
+// * section[documentation].section[medicalHistory].section ^slicing.discriminator.type = #pattern
+// * section[documentation].section[medicalHistory].section ^slicing.discriminator.path = "code"
+// * section[documentation].section[medicalHistory].section ^slicing.rules = #open
+// * section[documentation].section[medicalHistory].section contains
+//     bodyWeight 1..1 MS and
+//     bodyHeight 1..1 MS
+
+// * section[documentation].section[medicalHistory].section["bodyWeight"].entry only Reference(DDGDmpMedicalHistory)
+// * section[documentation].section[medicalHistory].section["bodyHeight"].entry only Reference(DDGDmpMedicalHistory)
+
+
+
+// * section[documentation].section ..0
 
 // Details on section "originalPresentation" for including the original PDF if available
 * section[originalRepresentation] ^short = "Contains the document's information in PDF format"
@@ -96,9 +143,8 @@ must be structured in the Composition as the first entry of the document."""
 * section[originalRepresentation].section ..0
 
 
-// Further treatment planning and enrollment reason
-* extension contains
-    DDGDmpEnrollmentReason named enrollmentReason 1.. MS and // TODO: Or 1..1?
-    DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
-// * extension[treatmentPlanning] ^short = "Follow-up treatment planning for this patient"
-// * extension[enrollmentReason] ^short = "Reason why the patient got enrolled into DMP"
+// // Further treatment planning and enrollment reason
+// * extension contains
+//     DDGDmpEnrollmentReason named enrollmentReason 1.. MS and // TODO: Or 1..1?
+//     DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
+//     // and DDGDmpMedicalHistory named medicalHistory 1.. MS
