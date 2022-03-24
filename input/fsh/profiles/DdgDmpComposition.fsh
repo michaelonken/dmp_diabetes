@@ -61,7 +61,7 @@ must be structured in the Composition as the first entry of the document."""
 
 * section[medications].entry 1.. MS
 * section[medications].entry ^short = "Medications of the patient"
-* section[medications].entry only Reference(DDGDmpMedicalHistory)
+// * section[medications].entry only Reference(DDGDmpMedicalHistory) // TODO
 
 * section[trainings].entry 1.. MS
 * section[medications].entry ^short = "Diabetes-related trainings"
@@ -75,7 +75,7 @@ must be structured in the Composition as the first entry of the document."""
     bodyHeight 1..1 MS and
     smokingStatus 1..1 MS and
     bloodPressure 1..1 MS and
-    secondaryDeseases 1.. MS and
+    secondaryDiseases 1.. MS and
     hba1c 1..1 MS and
     pathologicUrineAlbuminExcretion 1..1 MS and
     eGfr 1..1 MS and
@@ -92,50 +92,34 @@ must be structured in the Composition as the first entry of the document."""
 * section[medicalHistory].section[bodyWeight].entry only Reference($BodyWeight)
 * section[medicalHistory].section[bodyHeight].entry 1..1 MS
 * section[medicalHistory].section[bodyHeight].entry only Reference($BodyHeight)
-// * section[medicalHistory].section[smokingStatus].entry 1..1 MS
-// * section[medicalHistory].section[smokingStatus].entry only Reference()
+* section[medicalHistory].section[smokingStatus].entry 1..1 MS
+* section[medicalHistory].section[smokingStatus].entry only Reference(DDGDmpMedicalHistorySmokingStatus)
 * section[medicalHistory].section[bloodPressure].entry 1..1 MS
 * section[medicalHistory].section[bloodPressure].entry only Reference($BloodPressure)
-
-// TODO:
-// - Begleiterkrankungen
-// - HbA1c
-// - Pathologische Urin-Albumin-Ausscheidung
-// - eGFR
-// - Pulsstatus
-// - Sensibilitätsprüfung
-// - Weiteres Risiko für Ulcus
-// - Ulkus
-// - (Wund)Infektion
-// - Injektionsstellen (bei Insulintherapie)
-// - Intervall für künftige Fußinspektionen (bei Patientinnen und Patienten ab dem vollendeten 18. Lebensjahr)
-// - Spätfolgen
-
-
-
-// * section[documentation].entry[consentEda] ^short = "Consent for eDA"
-// * section[documentation].entry[consentEda].reference 1..1 MS
-// * section[documentation].entry[consentRegistry] only Reference(DDGDmpConsentRegistry)
-// * section[documentation].entry[consentRegistry] ^short = "Consent for Registry"
-// * section[documentation].entry[consentRegistry].reference 1..1 MS
-// * section[documentation].entry[medications] only Reference(DDGDmpMedicalHistory)
-// * section[documentation].entry[medications] ^short = "Medications"
-// * section[documentation].entry[medications].reference 1..1 MS
-// * section[documentation].entry[trainings] only Reference(DDGDmpTraining)
-// * section[documentation].entry[trainings] ^short = "Training(s)"
-// * section[documentation].entry[trainings].reference 1..1 MS
-
-// * section[documentation].section[medicalHistory].section ^slicing.discriminator.type = #pattern
-// * section[documentation].section[medicalHistory].section ^slicing.discriminator.path = "code"
-// * section[documentation].section[medicalHistory].section ^slicing.rules = #open
-// * section[documentation].section[medicalHistory].section contains
-//     bodyWeight 1..1 MS and
-//     bodyHeight 1..1 MS
-
-// * section[documentation].section[medicalHistory].section["bodyWeight"].entry only Reference(DDGDmpMedicalHistory)
-// * section[documentation].section[medicalHistory].section["bodyHeight"].entry only Reference(DDGDmpMedicalHistory)
-
-
+* section[medicalHistory].section[secondaryDiseases].entry 1..1 MS
+* section[medicalHistory].section[secondaryDiseases].entry only Reference(DDGDmpMedicalHistorySecondaryDiseases)
+* section[medicalHistory].section[hba1c].entry 1..1 MS
+* section[medicalHistory].section[hba1c].entry only Reference(DDGDmpMedicalHistoryHba1cMmol or DDGDmpMedicalHistoryHba1cPercent)
+// * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry 1..1 MS
+// * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry only Reference()
+// * section[medicalHistory].section[eGfr].entry 1..1 MS
+// * section[medicalHistory].section[eGfr].entry only Reference()
+// * section[medicalHistory].section[pulseStatus].entry 1..1 MS
+// * section[medicalHistory].section[pulseStatus].entry only Reference()
+// * section[medicalHistory].section[sensitivityCheck].entry 1..1 MS
+// * section[medicalHistory].section[sensitivityCheck].entry only Reference()
+// * section[medicalHistory].section[furtherRiskForUlcus].entry 1..1 MS
+// * section[medicalHistory].section[furtherRiskForUlcus].entry only Reference()
+// * section[medicalHistory].section[ulcus].entry 1..1 MS
+// * section[medicalHistory].section[ulcus].entry only Reference()
+// * section[medicalHistory].section[woundInfection].entry 1..1 MS
+// * section[medicalHistory].section[woundInfection].entry only Reference()
+// * section[medicalHistory].section[injectionSite].entry 1..1 MS
+// * section[medicalHistory].section[injectionSite].entry only Reference()
+// * section[medicalHistory].section[futureFeetInspectionInterval].entry 1..1 MS
+// * section[medicalHistory].section[futureFeetInspectionInterval].entry only Reference()
+// * section[medicalHistory].section[lateEffects].entry 1..1 MS
+// * section[medicalHistory].section[lateEffects].entry only Reference()
 
 // * section[documentation].section ..0
 
