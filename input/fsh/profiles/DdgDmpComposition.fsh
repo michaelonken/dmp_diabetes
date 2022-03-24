@@ -74,9 +74,19 @@ must be structured in the Composition as the first entry of the document."""
     bodyWeight 1..1 MS and
     bodyHeight 1..1 MS and
     smokingStatus 1..1 MS and
-    bloodPressure 1..1 MS
-
-
+    bloodPressure 1..1 MS and
+    secondaryDeseases 1.. MS and
+    hba1c 1..1 MS and
+    pathologicUrineAlbuminExcretion 1..1 MS and
+    eGfr 1..1 MS and
+    pulseStatus 1..1 MS and
+    sensitivityCheck 1..1 MS and
+    furtherRiskForUlcus 1.. MS and
+    ulcus 1..1 MS and
+    woundInfection 1..1 MS and
+    injectionSite 1..1 MS and
+    futureFeetInspectionInterval 1..1 MS and
+    lateEffects 1..1 MS
 
 * section[medicalHistory].section[bodyWeight].entry 1..1 MS
 * section[medicalHistory].section[bodyWeight].entry only Reference($BodyWeight)
