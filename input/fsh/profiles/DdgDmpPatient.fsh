@@ -14,7 +14,8 @@ Description: "DDG Patient participating in DMP."
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Patient"
 * identifier 1..1 MS
-* active 0..1 // TODO: only allow "true" (bool)
+* active 0..1 MS
+* active = true
 * name 1..1 MS
 * gender 1..1 MS
 * birthDate 1..1 MS
