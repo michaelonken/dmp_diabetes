@@ -113,3 +113,84 @@ Description: "DDG Medical History Urine Albumin Excretion in DMP documents"
 * value[x] only CodeableConcept
 * valueCodeableConcept MS
 * valueCodeableConcept from VS_DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion (required)
+
+// -----------------------------------------------------------------------------
+
+Profile: DDGDmpMedicalHistoryEgfr
+Parent: Observation
+Id: ddg-dmp-medical-history-egfr
+Title: "DDG DMP Medical History eGFR"
+Description: "DDG Medical History eGFR in DMP documents"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History eGFR"
+* insert DDGDmpSimpleObservation($obs_category#laboratory, CS_DDGDmpMedicalHistoryProblemItem#estimated_glomerular_filtration_rate)
+// TODO Description/Invariant: Either value or dataAbsentReason has to be provided
+* value[x] 0..1 MS
+* value[x] ^short = "Measured eGFR"
+* value[x] only Quantity
+* valueQuantity MS
+* valueQuantity.value 1..1 MS
+* valueQuantity.unit 1..1 MS
+* valueQuantity.unit = "mL/min{1.73m2}" // TODO: Is this correct? Background at https://ucum.org/trac/ticket/98
+* valueQuantity.system = "http://unitsofmeasure.org"
+* dataAbsentReason 0..1 MS
+* dataAbsentReason = $yes_no_uknown#NASK // not asked
+
+// -----------------------------------------------------------------------------
+
+Profile: DDGDmpMedicalHistoryPulseStatus
+Parent: Observation
+Id: ddg-dmp-medical-history-pulse-status
+Title: "DDG DMP Medical History Pulse Status"
+Description: "DDG Medical History Pulse Status in DMP documents"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History eGFR"
+* insert DDGDmpSimpleObservation($obs_category#vital-signs, CS_DDGDmpMedicalHistoryProblemItem#pulse_status)
+// TODO Description/Invariant: Either value or dataAbsentReason has to be provided
+* value[x] 1..1 MS
+* value[x] ^short = "Denotes whether patient showed normal or abnormal pulse"
+* value[x] only CodeableConcept
+* valueCodeableConcept MS
+* valueCodeableConcept from DdgDmpNormalAbnormalPulse (required)
+* dataAbsentReason 0..1 MS
+* dataAbsentReason = $yes_no_uknown#NASK // not asked
+
+// -----------------------------------------------------------------------------
+
+Profile: DDGDmpMedicalHistorySensitivityCheck
+Parent: Observation
+Id: ddg-dmp-medical-history-sensitivity-check
+Title: "DDG DMP Medical History Sensitivity Check"
+Description: "DDG Medical History Sensitivity Check in DMP documents"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History Sensitivity Check"
+
+* insert DDGDmpSimpleObservation($obs_category#exam, CS_DDGDmpMedicalHistoryProblemItem#sensitivity_check)
+* valueCodeableConcept MS
+* valueCodeableConcept from DdgDmpNormalAbnormal (required)
+* dataAbsentReason 0..1 MS
+* dataAbsentReason = $yes_no_uknown#NASK // not asked

@@ -102,12 +102,12 @@ must be structured in the Composition as the first entry of the document."""
 * section[medicalHistory].section[hba1c].entry only Reference(DDGDmpMedicalHistoryHba1cMmol or DDGDmpMedicalHistoryHba1cPercent)
 * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry 1..1 MS
 * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry only Reference(DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion)
-// * section[medicalHistory].section[eGfr].entry 1..1 MS
-// * section[medicalHistory].section[eGfr].entry only Reference()
-// * section[medicalHistory].section[pulseStatus].entry 1..1 MS
-// * section[medicalHistory].section[pulseStatus].entry only Reference()
-// * section[medicalHistory].section[sensitivityCheck].entry 1..1 MS
-// * section[medicalHistory].section[sensitivityCheck].entry only Reference()
+* section[medicalHistory].section[eGfr].entry 1..1 MS
+* section[medicalHistory].section[eGfr].entry only Reference(DDGDmpMedicalHistoryEgfr)
+* section[medicalHistory].section[pulseStatus].entry 1..1 MS
+* section[medicalHistory].section[pulseStatus].entry only Reference(DDGDmpMedicalHistoryPulseStatus)
+* section[medicalHistory].section[sensitivityCheck].entry 1..1
+* section[medicalHistory].section[sensitivityCheck].entry only Reference(DDGDmpMedicalHistorySensitivityCheck)
 // * section[medicalHistory].section[furtherRiskForUlcus].entry 1..1 MS
 // * section[medicalHistory].section[furtherRiskForUlcus].entry only Reference()
 // * section[medicalHistory].section[ulcus].entry 1..1 MS
