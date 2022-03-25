@@ -100,8 +100,8 @@ must be structured in the Composition as the first entry of the document."""
 * section[medicalHistory].section[secondaryDiseases].entry only Reference(DDGDmpMedicalHistorySecondaryDiseases)
 * section[medicalHistory].section[hba1c].entry 1..1 MS
 * section[medicalHistory].section[hba1c].entry only Reference(DDGDmpMedicalHistoryHba1cMmol or DDGDmpMedicalHistoryHba1cPercent)
-// * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry 1..1 MS
-// * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry only Reference()
+* section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry 1..1 MS
+* section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry only Reference(DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion)
 // * section[medicalHistory].section[eGfr].entry 1..1 MS
 // * section[medicalHistory].section[eGfr].entry only Reference()
 // * section[medicalHistory].section[pulseStatus].entry 1..1 MS

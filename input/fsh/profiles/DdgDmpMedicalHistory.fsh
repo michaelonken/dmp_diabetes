@@ -92,5 +92,24 @@ Description: "DDG Medical History HbA1c Percent in DMP documents"
 
 // -----------------------------------------------------------------------------
 
-
-
+Profile: DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion
+Parent: Observation
+Id: ddg-dmp-medical-history-urine-albumin-excretion
+Title: "DDG DMP Medical History Urine Albumin Excretion"
+Description: "DDG Medical History Urine Albumin Excretion in DMP documents"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History Urine Albumin Excretion"
+* insert DDGDmpSimpleObservation($obs_category#laboratory, CS_DDGDmpMedicalHistoryProblemItem#pathologic_urine_albumin_excretion)
+* value[x] 1..1 MS
+* value[x] ^short = "Denotes whether patient shows pathological urine albumin excretion"
+* value[x] only CodeableConcept
+* valueCodeableConcept MS
+* valueCodeableConcept from VS_DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion (required)
