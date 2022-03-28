@@ -116,10 +116,9 @@ must be structured in the Composition as the first entry of the document."""
 * section[medicalHistory].section[woundInfection].entry only Reference(DDGDmpMedicalHistoryWoundInfection)
 * section[medicalHistory].section[injectionSite].entry 1..1 MS
 * section[medicalHistory].section[injectionSite].entry only Reference(DDGDmpMedicalHistoryInjectionSite)
-// * section[medicalHistory].section[futureFeetInspectionInterval].entry 1..1 MS
-// * section[medicalHistory].section[futureFeetInspectionInterval].entry only Reference()
-// * section[medicalHistory].section[lateEffects].entry 1..1 MS
-// * section[medicalHistory].section[lateEffects].entry only Reference()
+// futureFeetInspectionInterval -> moved to treatment planning where makes more sense (TODO ok?)
+* section[medicalHistory].section[lateEffects].entry 0.. MS
+* section[medicalHistory].section[lateEffects].entry only Reference(DDGDmpMedicalHistoryLateEffects)
 
 // * section[documentation].section ..0
 

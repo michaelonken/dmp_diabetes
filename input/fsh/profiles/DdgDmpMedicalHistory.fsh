@@ -46,7 +46,7 @@ Description: "DDG Medical History Secondary Diseases in DMP documents"
 * category 1..1 MS
 * category = $cond_category#problem-list-item
 * code 1..1 MS
-* code from DdgDmpSecondaryDiseases
+* code from DdgDmpSecondaryDiseases (required)
 * subject 1..1 MS
 * subject only Reference(DDGDmpPatient)
 
@@ -280,7 +280,6 @@ Description: "DDG Medical History Wound Infection in DMP documents"
 * dataAbsentReason = $sct#416237000 // Procedure not done.
 
 
-
 // -----------------------------------------------------------------------------
 
 Profile: DDGDmpMedicalHistoryInjectionSite
@@ -309,3 +308,32 @@ Description: "DDG Medical History Injection Site (for Insulin Therapy) in DMP do
 * valueCodeableConcept from DdgDmpNormalAbnormal (required)
 * dataAbsentReason 0..1 MS
 * dataAbsentReason = $sct#416237000 // Procedure not done.
+
+
+// -----------------------------------------------------------------------------
+
+Profile: DDGDmpMedicalHistoryLateEffects
+Parent: Condition
+Id: ddg-dmp-medical-history-late-effects
+Title: "DDG DMP Medical History Late Effects"
+Description: "DDG Medical History Late Effects in DMP documents"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History Late Effects"
+
+// TODO: Do we want to allow anything but clinicalStaus = "active"?
+// * clinicalStatus 0..1 MS
+* clinicalStatus = $cond_status#active
+* category 1..1 MS
+* category = $cond_category#problem-list-item
+* code 1..1 MS
+* code from DdgDmpLateEffects (required)
+* subject 1..1 MS
+* subject only Reference(DDGDmpPatient)
