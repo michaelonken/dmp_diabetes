@@ -14,4 +14,4 @@ Description: "DDG DMP Yes / No / Not done"
 
 * $sct#373066001 "Yes"
 * $sct#373067005 "No"
-* $sct#416237000 "Procedure not done" // TODO: KBV: "Nicht untersucht"
+* $sct#416237000 // Procedure not done. TODO: KBV: "Nicht untersucht"

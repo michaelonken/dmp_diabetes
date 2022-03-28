@@ -21,7 +21,8 @@ Description: "Planning for further treatment of the patient"
     documentationInteveral 1..1 MS and
     hba1cTargetReached 1..1 MS and
     treatmentAtDiabeticFootSyndromInstitution 1..1 MS and
-    outpatientHospitalAdmissionForDiabetes 1..1 MS
+    outpatientHospitalAdmissionForDiabetes 1..1 MS and
+    intervalFeetInspectionAdults 0..1 MS
 * extension[patientRequestedInformationTopic] only Extension
 * extension[documentationInteveral] only Extension
 * extension[hba1cTargetReached] only Extension
@@ -41,3 +42,6 @@ Description: "Planning for further treatment of the patient"
 * extension[outpatientHospitalAdmissionForDiabetes] ^short = "Diabetesbezogene stationäre Einweisung"
 * extension[outpatientHospitalAdmissionForDiabetes].value[x] only Coding
 * extension[outpatientHospitalAdmissionForDiabetes].valueCoding from DdgDmpYesNoPlanned (required)
+* extension[intervalFeetInspectionAdults] ^short = "Interval for future feet inspections (for patients >= 18 years of age)"
+* extension[intervalFeetInspectionAdults].value[x] only Coding
+* extension[intervalFeetInspectionAdults].valueCoding from DdgDmpFeetInspectionInterval (required)

@@ -1,3 +1,5 @@
+// BodyHeight, BodyWeight, Blood pressure (dia/sys) defined elsewhere, see related Composition
+
 Profile: DDGDmpMedicalHistorySmokingStatus
 Parent: Observation
 Id: ddg-dmp-medical-history-smoking-status
@@ -142,7 +144,7 @@ Description: "DDG Medical History eGFR in DMP documents"
 * valueQuantity.unit = "mL/min{1.73m2}" // TODO: Is this correct? Background at https://ucum.org/trac/ticket/98
 * valueQuantity.system = "http://unitsofmeasure.org"
 * dataAbsentReason 0..1 MS
-* dataAbsentReason = $yes_no_uknown#NASK // not asked
+* dataAbsentReason = $sct#416237000 // Procedure not done.
 
 // -----------------------------------------------------------------------------
 
@@ -169,7 +171,7 @@ Description: "DDG Medical History Pulse Status in DMP documents"
 * valueCodeableConcept MS
 * valueCodeableConcept from DdgDmpNormalAbnormalPulse (required)
 * dataAbsentReason 0..1 MS
-* dataAbsentReason = $yes_no_uknown#NASK // not asked
+* dataAbsentReason = $sct#416237000 // Procedure not done.
 
 // -----------------------------------------------------------------------------
 
@@ -193,7 +195,7 @@ Description: "DDG Medical History Sensitivity Check in DMP documents"
 * valueCodeableConcept MS
 * valueCodeableConcept from DdgDmpNormalAbnormal (required)
 * dataAbsentReason 0..1 MS
-* dataAbsentReason = $yes_no_uknown#NASK // not asked
+* dataAbsentReason = $sct#416237000 // Procedure not done.
 
 // -----------------------------------------------------------------------------
 
@@ -246,7 +248,7 @@ Description: "DDG Medical History Ulcus in DMP documents"
 * valueCodeableConcept MS
 * valueCodeableConcept from DdgDmpUlcus (required)
 * dataAbsentReason 0..1 MS
-* dataAbsentReason = $yes_no_uknown#NASK // not asked
+* dataAbsentReason = $sct#416237000 // Procedure not done.
 
 // -----------------------------------------------------------------------------
 
@@ -266,8 +268,44 @@ Description: "DDG Medical History Wound Infection in DMP documents"
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Medical History Wound Infection"
 
+// KBV Values:
+// ja
+// nein
+// nicht untersucht
+
 * insert DDGDmpSimpleObservation($obs_category#exam, $sct#76844004) // Code for "Local infection of wound (disorder)"
 * value[x] only boolean
 * valueBoolean 0..1
 * dataAbsentReason 0..1 MS
-* dataAbsentReason = $yes_no_uknown#NASK // not asked
+* dataAbsentReason = $sct#416237000 // Procedure not done.
+
+
+
+// -----------------------------------------------------------------------------
+
+Profile: DDGDmpMedicalHistoryInjectionSite
+Parent: Observation
+Id: ddg-dmp-medical-history-injection-site
+Title: "DDG DMP Injection Site (for Insulin Therapy)"
+Description: "DDG Medical History Injection Site (for Insulin Therapy) in DMP documents"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History Injection Site"
+
+// KBV Values:
+// Unauffällig
+// Auffällig
+// Nicht untersucht
+
+* insert DDGDmpSimpleObservation($obs_category#exam, $sct#13136005) // Code for "Injection site (morphologic abnormality)"
+* valueCodeableConcept MS
+* valueCodeableConcept from DdgDmpNormalAbnormal (required)
+* dataAbsentReason 0..1 MS
+* dataAbsentReason = $sct#416237000 // Procedure not done.
