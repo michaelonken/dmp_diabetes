@@ -139,5 +139,6 @@ must be structured in the Composition as the first entry of the document."""
 // Further treatment planning and enrollment reason
 * extension contains
     DDGDmpEnrollmentReason named enrollmentReason 1.. MS and // TODO: Or 1..1?
-    DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
-    // and DDGDmpMedicalHistory named medicalHistory 1.. MS
+    DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS and
+    DDGDmpRelevantEvents named relevantEvents 1..1 MS
+
