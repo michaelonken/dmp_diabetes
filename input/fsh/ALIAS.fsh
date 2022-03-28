@@ -4,7 +4,7 @@ Alias:   $sct =                         http://snomed.info/sct
 Alias:   $obs_category  =               http://terminology.hl7.org/CodeSystem/observation-category
 Alias:   $cond_status   =               http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias:   $cond_category =               http://terminology.hl7.org/CodeSystem/condition-category
-Alias:   $yes_no_uknown = http://terminology.hl7.org/CodeSystem/v2-0532
+Alias:   $yes_no_uknown =               http://terminology.hl7.org/CodeSystem/v2-0532
 
 // Structure Definitions
 Alias: $BodyWeight = http://hl7.org/fhir/StructureDefinition/bodyweight

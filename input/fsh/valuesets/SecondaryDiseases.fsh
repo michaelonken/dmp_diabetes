@@ -19,3 +19,4 @@ Description: "DDG DMP Secondary Diseases"
 * $sct#13645005  // Chronic obstructive lung disease (disorder)
 * $sct#48447003  // Chronic heart failure (disorder). TODO: Check whether code is specific enough. KBV: "Chronische Herzinsuffizienz"
 // TODO: Code for "Keine der genannten" not listed in this value set; in that case, secondary diseases should simply be not listet at all in the medical history (Composition.medicalHistory)
+

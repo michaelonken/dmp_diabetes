@@ -1,7 +1,7 @@
-ValueSet: VS_DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion
-Id: ddg-dmp-medical-history-pathologic-urine-albumin-excretion
-Title: "DDG DMP Pathologic Urine Albumin Excretiion"
-Description: "DDG DMP Pathologic Urine Albumin ExcretiionReason"
+ValueSet: VS_DDGDmpYesNoNotdone
+Id: ddg-dmp-medical-history-yes-no-notdone
+Title: "DDG DMP Yes / No / Not done"
+Description: "DDG DMP Yes / No / Not done"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"

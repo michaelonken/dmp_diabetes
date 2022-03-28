@@ -112,7 +112,7 @@ Description: "DDG Medical History Urine Albumin Excretion in DMP documents"
 * value[x] ^short = "Denotes whether patient shows pathological urine albumin excretion"
 * value[x] only CodeableConcept
 * valueCodeableConcept MS
-* valueCodeableConcept from VS_DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion (required)
+* valueCodeableConcept from VS_DDGDmpYesNoNotdone (required)
 
 // -----------------------------------------------------------------------------
 
@@ -194,3 +194,31 @@ Description: "DDG Medical History Sensitivity Check in DMP documents"
 * valueCodeableConcept from DdgDmpNormalAbnormal (required)
 * dataAbsentReason 0..1 MS
 * dataAbsentReason = $yes_no_uknown#NASK // not asked
+
+// -----------------------------------------------------------------------------
+
+Profile: DDGDmpMedicalHistoryFurtherRiskUlcus
+Parent: Condition
+Id: ddg-dmp-medical-history-further-risk-ulcus
+Title: "DDG DMP Medical History Further Risk for Ulcus"
+Description: "DDG Medical History Further Risk for Ulcus"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History Further Risk for Ulcus"
+
+// TODO: Do we want to allow anything but clinicalStaus = "active"?
+// * clinicalStatus 0..1 MS
+* clinicalStatus = $cond_status#active
+* category 1..1 MS
+* category = $cond_category#problem-list-item
+* code 1..1 MS
+* code from DdgDmpFurtherRiskUlcus (required)
+* subject 1..1 MS
+* subject only Reference(DDGDmpPatient)
