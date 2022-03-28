@@ -27,19 +27,19 @@ Description: "Planning for further treatment of the patient"
 * extension[documentationInteveral] only Extension
 * extension[hba1cTargetReached] only Extension
 * extension[outpatientHospitalAdmissionForDiabetes] only Extension
-* extension[patientRequestedInformationTopic] ^short = "Vom Patienten gewünschte Informationsangebote der Krankenkasse"
+* extension[patientRequestedInformationTopic] ^short = "Desired information from health insurace"
 * extension[patientRequestedInformationTopic].value[x] only Coding
 * extension[patientRequestedInformationTopic].valueCoding from DdgDmpPatientRequestedInformationTopic (required)
-* extension[documentationInteveral] ^short = "Dokumentationsintervall"
+* extension[documentationInteveral] ^short = "Documentation interval"
 * extension[documentationInteveral].value[x] only Coding
 * extension[documentationInteveral].valueCoding from DdgDmpDocumentationInterval (required)
-* extension[hba1cTargetReached] ^short = "HbA1c-Zielwert"
+* extension[hba1cTargetReached] ^short = "HbA1c target value"
 * extension[hba1cTargetReached].value[x] only Coding
 * extension[hba1cTargetReached].valueCoding from DdgDmpHba1cValueReached (required)
-* extension[treatmentAtDiabeticFootSyndromInstitution] ^short = "Behandlung/Mitbehandlung in einer für das Diabetische Fußsyndrom qualifizierten Einrichtung"
+* extension[treatmentAtDiabeticFootSyndromInstitution] ^short = "Treatment/Additional treatment in institution qualified for diabetic foot syndrom"
 * extension[treatmentAtDiabeticFootSyndromInstitution].value[x] only Coding
 * extension[treatmentAtDiabeticFootSyndromInstitution].valueCoding from DdgDmpYesNoPlanned (required)
-* extension[outpatientHospitalAdmissionForDiabetes] ^short = "Diabetesbezogene stationäre Einweisung"
+* extension[outpatientHospitalAdmissionForDiabetes] ^short = "Inpatient admission related to diabetes"
 * extension[outpatientHospitalAdmissionForDiabetes].value[x] only Coding
 * extension[outpatientHospitalAdmissionForDiabetes].valueCoding from DdgDmpYesNoPlanned (required)
 * extension[intervalFeetInspectionAdults] ^short = "Interval for future feet inspections (for patients >= 18 years of age)"
