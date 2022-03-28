@@ -247,3 +247,27 @@ Description: "DDG Medical History Ulcus in DMP documents"
 * valueCodeableConcept from DdgDmpUlcus (required)
 * dataAbsentReason 0..1 MS
 * dataAbsentReason = $yes_no_uknown#NASK // not asked
+
+// -----------------------------------------------------------------------------
+
+Profile: DDGDmpMedicalHistoryWoundInfection
+Parent: Observation
+Id: ddg-dmp-medical-history-wound-infection
+Title: "DDG DMP Medical History Wound Infection"
+Description: "DDG Medical History Wound Infection in DMP documents"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History Wound Infection"
+
+* insert DDGDmpSimpleObservation($obs_category#exam, $sct#76844004) // Code for "Local infection of wound (disorder)"
+* value[x] only boolean
+* valueBoolean 0..1
+* dataAbsentReason 0..1 MS
+* dataAbsentReason = $yes_no_uknown#NASK // not asked
