@@ -110,8 +110,8 @@ must be structured in the Composition as the first entry of the document."""
 * section[medicalHistory].section[sensitivityCheck].entry only Reference(DDGDmpMedicalHistorySensitivityCheck)
 * section[medicalHistory].section[furtherRiskForUlcus].entry 1.. MS
 * section[medicalHistory].section[furtherRiskForUlcus].entry only Reference(DDGDmpMedicalHistoryFurtherRiskUlcus)
-// * section[medicalHistory].section[ulcus].entry 1..1 MS
-// * section[medicalHistory].section[ulcus].entry only Reference()
+* section[medicalHistory].section[ulcus].entry 1..1 MS
+* section[medicalHistory].section[ulcus].entry only Reference(DDGDmpMedicalHistoryUlcus)
 // * section[medicalHistory].section[woundInfection].entry 1..1 MS
 // * section[medicalHistory].section[woundInfection].entry only Reference()
 // * section[medicalHistory].section[injectionSite].entry 1..1 MS

@@ -201,7 +201,7 @@ Profile: DDGDmpMedicalHistoryFurtherRiskUlcus
 Parent: Condition
 Id: ddg-dmp-medical-history-further-risk-ulcus
 Title: "DDG DMP Medical History Further Risk for Ulcus"
-Description: "DDG Medical History Further Risk for Ulcus"
+Description: "DDG Medical History Further Risk for Ulcus in DMP documents"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"
@@ -222,3 +222,28 @@ Description: "DDG Medical History Further Risk for Ulcus"
 * code from DdgDmpFurtherRiskUlcus (required)
 * subject 1..1 MS
 * subject only Reference(DDGDmpPatient)
+
+
+// -----------------------------------------------------------------------------
+
+Profile: DDGDmpMedicalHistoryUlcus
+Parent: Observation
+Id: ddg-dmp-medical-history-ulcus
+Title: "DDG DMP Medical Ulcus"
+Description: "DDG Medical History Ulcus in DMP documents"
+* ^version = "0.0.1"
+* ^status = #draft
+* ^date = "2022-03-15T00:00:00+00:00"
+* ^publisher = "Open Connections GmbH"
+* ^contact.name = "Open Connections GmbH"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.open-connections.de/"
+* ^jurisdiction = urn:iso:std:iso:3166#DEU
+* ^copyright = "CC-BY-SA-4.0"
+* . ^short = "DDG DMP Medical History Ulcus"
+
+* insert DDGDmpSimpleObservation($obs_category#exam, $sct#56208002) // Code for "Ulcer (morphologic abnormality)"
+* valueCodeableConcept MS
+* valueCodeableConcept from DdgDmpUlcus (required)
+* dataAbsentReason 0..1 MS
+* dataAbsentReason = $yes_no_uknown#NASK // not asked
