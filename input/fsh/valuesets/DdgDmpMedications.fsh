@@ -15,14 +15,14 @@ Description: "DDG DMP Medications"
 * $sct#67866001     // Insulin
 * $sct#384978002    // Gilbenclamide
 * $sct#372567009    // Metformin
+
+// TODO Note that Thrombozytenaggregationshemmer code values yes and orale Antikoagulation) have been split into:
+// $sct#771452004 and $sct#414010005. Is this acceptable? It also means that someone could select both codes in the
+// medication section (yes and "Direct acting anticoagulant")
 * $sct#771452004    // Substance with platelet aggregation inhibitor mechanism of action (substance). TODO: Correct mapping from "Thrombozytenaggregationshemmer"?
+* $sct#414010005    //  Substance with direct thrombin inhibitor mechanism of action (substance). TODO: Correct mapping from "orale Koagulation?" specific to "Thrombozytenaggregationshemmer"?
+
 * $sct#373254001    // Substance with beta adrenergic receptor antagonist mechanism of action (substance) TODO: Correct mapping for "Betablocker"?
 * $sct#372733002    // Substance with angiotensin-converting enzyme inhibitor mechanism of action (substance) TOOD: Correct mapping for ACE Hemmer?
 * $sct#372912004    // Substance with 3-hydroxy-3-methylglutaryl-coenzyme A reductase inhibitor mechanism of action (substance). TODO Correct mapping for "HMG-CoA-Reduktase-Hemmer"?
 * $sct#372747003    // Thiazide diuretic (substance). TODO: Correct maping from "Thiaziddiuretika, einschließlich Chlorthalidon"?
-
-
-
-
-
-

@@ -61,7 +61,7 @@ must be structured in the Composition as the first entry of the document."""
 
 * section[medications].entry 1.. MS
 * section[medications].entry ^short = "Medications of the patient"
-* section[medications].entry only Reference(DDGDmpMedication)
+* section[medications].entry only Reference(DDGDmpMedication or DDGDmpContraIndication)
 // * section[medications].entry only Reference(DDGDmpMedicalHistory) // TODO
 
 * section[trainings].entry 1.. MS
