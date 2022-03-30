@@ -61,10 +61,11 @@ must be structured in the Composition as the first entry of the document."""
 
 * section[medications].entry 1.. MS
 * section[medications].entry ^short = "Medications of the patient"
+* section[medications].entry only Reference(DDGDmpMedication)
 // * section[medications].entry only Reference(DDGDmpMedicalHistory) // TODO
 
 * section[trainings].entry 1.. MS
-* section[medications].entry ^short = "Diabetes-related trainings"
+* section[trainings].entry ^short = "Diabetes-related trainings"
 * section[trainings].entry only Reference(DDGDmpTraining)
 
 * section[medicalHistory].section ^slicing.discriminator.type = #pattern
@@ -119,6 +120,20 @@ must be structured in the Composition as the first entry of the document."""
 // futureFeetInspectionInterval -> moved to treatment planning where makes more sense (TODO ok?)
 * section[medicalHistory].section[lateEffects].entry 0.. MS
 * section[medicalHistory].section[lateEffects].entry only Reference(DDGDmpMedicalHistoryLateEffects)
+
+// * section[medications].section ^slicing.discriminator.type = #pattern
+// * section[medications].section ^slicing.discriminator.path = "code"
+// * section[medications].section ^slicing.rules = #open
+// * section[medications].section contains // TODO: Define optionalities
+//     insulinOrAnalogous 1..1 MS and
+//     gilbenclamide 1..1 MS and
+//     metformin 1..1 MS and
+//     otherDiabeticMedication 1..1 MS and
+//     antiplateletAgents 1.. MS and // TODO Translation ok?
+//     betaBlockers 1..1 MS and
+//     aceInhibitors 1..1 MS and
+//     hmgCoaReductaseInhibitors 1..1 MS and // TODO Translation OK?
+//     thiazideDiuretics 1..1 MS
 
 // * section[documentation].section ..0
 

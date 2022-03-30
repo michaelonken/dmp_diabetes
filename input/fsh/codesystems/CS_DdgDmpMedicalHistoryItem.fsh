@@ -6,3 +6,4 @@ Description:  "Allowed terms for DDG DMP Medical History entry where no LOINC or
 * #estimated_glomerular_filtration_rate "eGFR (estimated Glomerular Filtration Rate)"
 * #pulse_status "Pulse Status"
 * #sensitivity_check "Sensitivity Check"
+
