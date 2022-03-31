@@ -64,9 +64,9 @@ must be structured in the Composition as the first entry of the document."""
 * section[medications].entry only Reference(DDGDmpMedication or DDGDmpContraIndication)
 // * section[medications].entry only Reference(DDGDmpMedicalHistory) // TODO
 
-* section[trainings].entry 1.. MS
+* section[trainings].entry 0.. MS
 * section[trainings].entry ^short = "Diabetes-related trainings"
-* section[trainings].entry only Reference(DDGDmpTraining)
+* section[trainings].entry only Reference(DDGDmpCompletedTrainingEncounter or DDGDmpFutureTrainingAppointment or DDGDmpFutureTrainingAppointmentNoShow)
 
 * section[medicalHistory].section ^slicing.discriminator.type = #pattern
 * section[medicalHistory].section ^slicing.discriminator.path = "code"
@@ -117,25 +117,9 @@ must be structured in the Composition as the first entry of the document."""
 * section[medicalHistory].section[woundInfection].entry only Reference(DDGDmpMedicalHistoryWoundInfection)
 * section[medicalHistory].section[injectionSite].entry 1..1 MS
 * section[medicalHistory].section[injectionSite].entry only Reference(DDGDmpMedicalHistoryInjectionSite)
-// futureFeetInspectionInterval -> moved to treatment planning where makes more sense (TODO ok?)
+// futureFeetInspectionInterval -> moved to treatment planning where it makes more sense (TODO ok?)
 * section[medicalHistory].section[lateEffects].entry 0.. MS
 * section[medicalHistory].section[lateEffects].entry only Reference(DDGDmpMedicalHistoryLateEffects)
-
-// * section[medications].section ^slicing.discriminator.type = #pattern
-// * section[medications].section ^slicing.discriminator.path = "code"
-// * section[medications].section ^slicing.rules = #open
-// * section[medications].section contains // TODO: Define optionalities
-//     insulinOrAnalogous 1..1 MS and
-//     gilbenclamide 1..1 MS and
-//     metformin 1..1 MS and
-//     otherDiabeticMedication 1..1 MS and
-//     antiplateletAgents 1.. MS and // TODO Translation ok?
-//     betaBlockers 1..1 MS and
-//     aceInhibitors 1..1 MS and
-//     hmgCoaReductaseInhibitors 1..1 MS and // TODO Translation OK?
-//     thiazideDiuretics 1..1 MS
-
-// * section[documentation].section ..0
 
 // Details on section "originalPresentation" for including the original PDF if available
 * section[originalRepresentation] ^short = "Contains the document's information in PDF format"
