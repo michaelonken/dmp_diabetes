@@ -2,7 +2,7 @@ Profile: DDGDmpCompletedTrainingEncounter
 Parent: Encounter
 Id: ddg-dmp-completed-training-encounter
 Title: "DDG DMP Completed Training"
-Description: "DDG completed training documents"
+Description: "DDG completed training in DMP documents"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"

@@ -66,7 +66,7 @@ must be structured in the Composition as the first entry of the document."""
 
 * section[trainings].entry 0.. MS
 * section[trainings].entry ^short = "Diabetes-related trainings"
-* section[trainings].entry only Reference(DDGDmpCompletedTrainingEncounter or DDGDmpFutureTrainingAppointment or DDGDmpFutureTrainingAppointmentNoShow)
+* section[trainings].entry only Reference(DDGDmpCompletedTrainingEncounter or DDGDmpFutureTrainingAppointment or DDGDmpMissedTraining)
 
 * section[medicalHistory].section ^slicing.discriminator.type = #pattern
 * section[medicalHistory].section ^slicing.discriminator.path = "code"
@@ -135,9 +135,10 @@ must be structured in the Composition as the first entry of the document."""
 * section[originalRepresentation].section ..0
 
 
-// Further treatment planning and enrollment reason
+// Further treatment planning, enrollment reason, events since last documentation
 * extension contains
     DDGDmpEnrollmentReason named enrollmentReason 1.. MS and // TODO: Or 1..1?
     DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS and
-    DDGDmpRelevantEvents named relevantEvents 1..1 MS
-
+    DDGDmpRelevantEvents named relevantEvents 1..1 MS and
+    DDGDmpEmergencyInpatientTreatmentEvents named emergencyInpatientTreatmens 0..1 MS and
+    DDGDmpSevereHypoglycemiaEvents named severeHypoglycemiaEvents 0..1

@@ -14,7 +14,6 @@ Description: "Planning for further treatment of the patient"
 * . ^short = "DDG DMP Treatment Planning"
 * ^context.type = #fhirpath
 * ^context.expression = "Composition"
-* . ^short = "DDG DMP Treatment Planning"
 * . ^definition = "Planning for further treatment of the patient"
 * extension contains
     patientRequestedInformationTopic 0..3 MS and

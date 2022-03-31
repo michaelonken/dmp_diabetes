@@ -2,7 +2,7 @@ Profile: DDGDmpPatient
 Parent: Patient
 Id: ddg-dmp-patient
 Title: "DDG DMP Patient"
-Description: "DDG Patient participating in DMP."
+Description: "DDG Patient participating in DMP"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"

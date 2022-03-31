@@ -2,8 +2,8 @@ Profile: DDGIgDmpDiabetes2Document
 Parent: DDGDmpDocument
 Id: ddg-ig-dmp-diabetes2-doc
 Title: "DDG IG DMP Diabetes 2 Document"
-Description: "DDG IG DMP Diabetes 2 Document"
-* . ^short = "DDG IG DMP Diabetes 2 Doc"
+Description: "DDG IG DMP Diabetes Type 2 Document"
+* . ^short = "DDG IG DMP Diabetes Type 2 Document"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-11T00:00:00+00:00"

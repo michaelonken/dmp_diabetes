@@ -1,7 +1,7 @@
-Profile: DDGDmpFutureTrainingAppointmentNoShow
+Profile: DDGDmpMissedTraining
 Parent: Appointment
-Id: ddg-dmp-future-training-appointment-no-show
-Title: "DDG DMP Training with Patient not participating"
+Id: ddg-dmp-Missed-training
+Title: "DDG DMP Missed Training"
 Description: "DDG DMP training where patient has not been participating in a recommended training"
 * ^version = "0.0.1"
 * ^status = #draft
@@ -12,7 +12,7 @@ Description: "DDG DMP training where patient has not been participating in a rec
 * ^contact.telecom.value = "https://www.open-connections.de/"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
-* . ^short = "DDG DMP future training"
+* . ^short = "DDG DMP missed training"
 
 * status MS
 * status = #noshow

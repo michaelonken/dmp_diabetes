@@ -1,7 +1,7 @@
-Extension: DDGDmpRelevantEvents
-Id: ddg-dmp-relevant-events
-Title: "DDG DMP Relevant Events"
-Description: "Relevant Events"
+Extension: DDGDmpSevereHypoglycemiaEvents
+Id: ddg-dmp-severe-hypogycemia-events
+Title: "DDG DMP Severe Hypoglycemia Events"
+Description: "Severe hypoglycemia since last documentation"
 * ^version = "0.0.1"
 * ^date = "2022-03-15T11:05:43+01:00"
 * ^publisher = "Open Connections GmbH"
@@ -10,11 +10,9 @@ Description: "Relevant Events"
 * ^contact.telecom.value = "https://www.open-connections.de/"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
-* . ^short = "DDG DMP Relevant Events"
 * ^context.type = #fhirpath
 * ^context.expression = "Composition"
-* . ^definition = "Events relevant for diabetic treatment"
 * value[x] 1..1 MS
-* value[x] only Coding
-* valueCoding from DdgDmpRelevantEvents
+* value[x] only positiveInt
+* valuePositiveInt 1..1 MS
 

@@ -12,7 +12,7 @@ Description: "DDG Contra Indication as part of DMP."
 * ^contact.telecom.value = "https://www.open-connections.de/"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
-* . ^short = "DDG DMP Contra Medication"
+* . ^short = "DDG DMP Contra Indication"
 * subject 1..1 MS
 * subject only Reference(DDGDmpMedication)
 

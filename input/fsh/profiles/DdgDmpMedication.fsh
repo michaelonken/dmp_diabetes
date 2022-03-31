@@ -2,7 +2,7 @@ Profile: DDGDmpMedication
 Parent: Medication
 Id: ddg-dmp-medication
 Title: "DDG DMP Medication"
-Description: "DDG Medication as part of DMP."
+Description: "DDG Medication as part of DMP"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"
