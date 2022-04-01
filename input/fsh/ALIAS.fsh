@@ -7,6 +7,7 @@ Alias:   $cond_category =               http://terminology.hl7.org/CodeSystem/co
 Alias:   $yes_no_uknown =               http://terminology.hl7.org/CodeSystem/v2-0532
 
 // Structure Definitions
+Alias: $KBVPatient = https://fhir.kbv.de/StructureDefinition/KBV_PR_MIO_TELE_Patient
 Alias: $BodyWeight = http://hl7.org/fhir/StructureDefinition/bodyweight
 Alias: $BodyHeight = http://hl7.org/fhir/StructureDefinition/bodyheight
 Alias: $BloodPressure = http://hl7.org/fhir/StructureDefinition/bp

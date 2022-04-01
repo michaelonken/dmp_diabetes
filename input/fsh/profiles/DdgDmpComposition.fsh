@@ -23,7 +23,7 @@ must be structured in the Composition as the first entry of the document."""
 * category = $lnc#33248-6 "Diabetes Status"
 * category ^short = "High-level kind of a clinical document at a macro level"
 * subject 1..1 MS
-* subject only Reference(DDGDmpPatient)
+* subject only Reference($KBVPatient)
 * subject ^short = "Patient being subject of this document"
 * author 1..1 MS
 * author only Reference(DDGDmpPractitioner)
