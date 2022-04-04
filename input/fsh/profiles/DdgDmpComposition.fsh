@@ -141,5 +141,5 @@ must be structured in the Composition as the first entry of the document."""
     DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS and
     DDGDmpRelevantEvents named relevantEvents 1..1 MS and
     DDGDmpEmergencyInpatientTreatmentEvents named emergencyInpatientTreatmens 0..1 MS and
-    DDGDmpSevereHypoglycemiaEvents named severeHypoglycemiaEvents 0..1 and
-    DDGDmpOpthalmicRetinalExamination named opthalmicRetinalExamination 0..1 MS // or 1..1?
+    DDGDmpSevereHypoglycemiaEvents named severeHypoglycemiaEvents 0..1
+    //DDGDmpOpthalmicRetinalExamination named opthalmicRetinalExamination 0..1 MS // or 1..1?
