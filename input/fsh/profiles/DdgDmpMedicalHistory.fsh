@@ -48,7 +48,7 @@ Description: "DDG Medical History Secondary Diseases in DMP documents"
 * code 1..1 MS
 * code from DdgDmpSecondaryDiseases (required)
 * subject 1..1 MS
-* subject only Reference(DDGDmpPatient)
+* subject only Reference($DmpPatient)
 
 // -----------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ RuleSet: DDGDmpMedicalHistoryHba1c(unit)
 * category = $obs_category#laboratory
 * code 1..1 MS
 * code = $sct#43396009
-* subject only Reference(DDGDmpPatient)
+* subject only Reference($DmpPatient)
 * effectiveDateTime 1..1 MS
 * value[x] 1..1 MS
 * value[x] ^short = "Measured HbA1c Quantity"
@@ -223,7 +223,7 @@ Description: "DDG Medical History Further Risk for Ulcus in DMP documents"
 * code 1..1 MS
 * code from DdgDmpFurtherRiskUlcus (required)
 * subject 1..1 MS
-* subject only Reference(DDGDmpPatient)
+* subject only Reference($DmpPatient)
 
 
 // -----------------------------------------------------------------------------
@@ -336,4 +336,4 @@ Description: "DDG Medical History Late Effects in DMP documents"
 * code 1..1 MS
 * code from DdgDmpLateEffects (required)
 * subject 1..1 MS
-* subject only Reference(DDGDmpPatient)
+* subject only Reference($DmpPatient)

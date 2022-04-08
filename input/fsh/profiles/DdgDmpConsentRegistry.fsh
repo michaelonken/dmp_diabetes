@@ -22,7 +22,7 @@ Description: "Consent for the DDG DMP Registry"
 * category = $lnc#59284-0 // Code for "Consent Document"
 
 * patient 1..1 MS
-* patient only Reference(DDGDmpPatient)
+* patient only Reference($DmpPatient)
 
 * source[x] 0..1 MS
 * source[x] ^short = "If set, element must contain PDF representing the patient's consent in human readable format (e.g. with wet signature)"
