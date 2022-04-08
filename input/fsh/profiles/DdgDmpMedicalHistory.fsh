@@ -123,7 +123,7 @@ Profile: DDGDmpMedicalHistoryEgfr
 Parent: Observation
 Id: ddg-dmp-medical-history-egfr
 Title: "DDG DMP Medical History eGFR"
-Description: "DDG Medical History eGFR in DMP documents"
+Description: "DDG Medical History Estimated Glomerular Filtration Rate (eGFR) in DMP documents"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"
@@ -133,7 +133,7 @@ Description: "DDG Medical History eGFR in DMP documents"
 * ^contact.telecom.value = "https://www.open-connections.de/"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
-* . ^short = "DDG DMP Medical History eGFR"
+* . ^short = "DDG DMP Medical History Estimated Glomerular Filtration Rate (eGFR) in DMP documents"
 * insert DDGDmpSimpleObservation($obs_category#laboratory, CS_DDGDmpMedicalHistoryProblemItem#estimated_glomerular_filtration_rate)
 // TODO Description/Invariant: Either value or dataAbsentReason has to be provided
 * value[x] 0..1 MS

@@ -104,7 +104,7 @@ must be structured in the Composition as the first entry of the document."""
     secondaryDiseases 0.. MS and
     hba1c 1..1 MS and
     pathologicUrineAlbuminExcretion 1..1 MS and
-    eGfr 1..1 MS and
+    estimatedGlomerularFiltrationRate 1..1 MS and
     pulseStatus 1..1 MS and
     sensitivityCheck 1..1 MS and
     furtherRiskForUlcus 1.. MS and
@@ -128,8 +128,8 @@ must be structured in the Composition as the first entry of the document."""
 * section[medicalHistory].section[hba1c].entry only Reference(DDGDmpMedicalHistoryHba1cMmol or DDGDmpMedicalHistoryHba1cPercent)
 * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry 1..1 MS
 * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry only Reference(DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion)
-* section[medicalHistory].section[eGfr].entry 1..1 MS
-* section[medicalHistory].section[eGfr].entry only Reference(DDGDmpMedicalHistoryEgfr)
+* section[medicalHistory].section[estimatedGlomerularFiltrationRate].entry 1..1 MS
+* section[medicalHistory].section[estimatedGlomerularFiltrationRate].entry only Reference(DDGDmpMedicalHistoryEgfr)
 * section[medicalHistory].section[pulseStatus].entry 1..1 MS
 * section[medicalHistory].section[pulseStatus].entry only Reference(DDGDmpMedicalHistoryPulseStatus)
 * section[medicalHistory].section[sensitivityCheck].entry 1..1
