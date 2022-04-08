@@ -28,10 +28,11 @@ contact:
 
 dependencies:
 
-  kbv.mio.tele: 1.0.0-kommentierung
   kbv.basis: 1.2.1
   de.basisprofil.r4: 0.9.13
+  # kbv.mio.tele: 1.0.0-kommentierung
 
+  # example for full dependency format:
   # ch.fhir.ig.ch-core:
   #   version: 2.0.0
   #   uri: http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core

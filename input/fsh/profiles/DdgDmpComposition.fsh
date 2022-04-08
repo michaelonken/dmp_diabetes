@@ -23,7 +23,7 @@ must be structured in the Composition as the first entry of the document."""
 * category = $lnc#33248-6 "Diabetes Status"
 * category ^short = "High-level kind of a clinical document at a macro level"
 * subject 1..1 MS
-* subject only Reference($KBVPatient)
+* subject only Reference($DMPPatient)
 * subject ^short = "Patient being subject of this document"
 * author 1..1 MS
 * author only Reference(DDGDmpPractitioner)
@@ -90,9 +90,9 @@ must be structured in the Composition as the first entry of the document."""
     lateEffects 1..1 MS
 
 * section[medicalHistory].section[bodyWeight].entry 1..1 MS
-* section[medicalHistory].section[bodyWeight].entry only Reference($BodyWeight)
+* section[medicalHistory].section[bodyWeight].entry only Reference($DMPBodyWeight)
 * section[medicalHistory].section[bodyHeight].entry 1..1 MS
-* section[medicalHistory].section[bodyHeight].entry only Reference($BodyHeight)
+// * section[medicalHistory].section[bodyHeight].entry only Reference($DMPBodyHeight)
 * section[medicalHistory].section[smokingStatus].entry 1..1 MS
 * section[medicalHistory].section[smokingStatus].entry only Reference(DDGDmpMedicalHistorySmokingStatus)
 * section[medicalHistory].section[bloodPressure].entry 1..1 MS

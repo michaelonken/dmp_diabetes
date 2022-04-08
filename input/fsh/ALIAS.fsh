@@ -9,9 +9,11 @@ Alias:   $yes_no_uknown =               http://terminology.hl7.org/CodeSystem/v2
 // Structure Definitions
 // TODO: Replace with https://fhir.kbv.de/StructureDefinition/KBV_PR_MIO_TELE_Patient once available
 // also see https://chat.fhir.org/#narrow/stream/215610-shorthand/topic/dependency.20on.20package.20without.20IG
-Alias: $KBVPatient = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient
-Alias: $BodyWeight = http://hl7.org/fhir/StructureDefinition/bodyweight
-Alias: $BodyHeight = http://hl7.org/fhir/StructureDefinition/bodyheight
+Alias: $DMPPatient = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient
+//Alias: $DMPPatient = https://fhir.kbv.de/StructureDefinition/KBV_PR_MIO_TELE_Patient
+Alias: $DMPPractitioner = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner
+Alias: $DMPBodyWeight = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Observation_Body_Height
+Alias: $DMPBodyHeight = https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Observation_Body_Weight
 Alias: $BloodPressure = http://hl7.org/fhir/StructureDefinition/bp
 Alias: $SocialHistory = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 
