@@ -29,7 +29,7 @@ contact:
 dependencies:
 
   kbv.basis: 1.2.1
-  de.basisprofil.r4: 0.9.13
+  # de.basisprofil.r4: 0.9.13
   # kbv.mio.tele: 1.0.0-kommentierung
 
   # example for full dependency format:
