@@ -47,7 +47,7 @@ must be structured in the Composition as the first entry of the document."""
     opthalmicRetinalExamination 1..1 MS and
     // TODO: "Einschreibung wegen?" with values "Asthma bronchiale KHK Diabetes mellitus Typ 1 Diabetes mellitus Typ 2 COPD Chronische Herzinsuffizienz Depression chronischer Rückenschmerz Osteoporose"
     medicalHistory 1.. MS and // TODO Best wording for "Anamnese- und Befunddaten"? Also this should probably also contain "Relevante Ereignisse" from DMP
-    medications 1.. MS and
+    medications 0.. MS and
     trainings 1.. MS and
     originalRepresentation 0..1 MS // TODO Only optionally embed PDF?
 
