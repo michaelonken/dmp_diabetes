@@ -164,7 +164,7 @@ Description: "DDG Medical History Pulse Status in DMP documents"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Medical History eGFR"
-* insert DDGDmpSimpleObservation($obs_category#vital-signs, CS_DDGDmpMedicalHistoryProblemItem#pulse_status)
+* insert DDGDmpSimpleObservation($obs_category#vital-signs, $sct#8499008)
 // TODO Description/Invariant: Either value or dataAbsentReason has to be provided
 * value[x] 1..1 MS
 * value[x] ^short = "Denotes whether patient showed normal or abnormal pulse"
