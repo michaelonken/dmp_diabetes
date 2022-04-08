@@ -101,7 +101,7 @@ must be structured in the Composition as the first entry of the document."""
     bodyHeight 1..1 MS and
     smokingStatus 1..1 MS and
     bloodPressure 1..1 MS and
-    secondaryDiseases 1.. MS and
+    secondaryDiseases 0.. MS and
     hba1c 1..1 MS and
     pathologicUrineAlbuminExcretion 1..1 MS and
     eGfr 1..1 MS and
