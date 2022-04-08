@@ -109,7 +109,8 @@ Description: "DDG Medical History Urine Albumin Excretion in DMP documents"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Medical History Urine Albumin Excretion"
-* insert DDGDmpSimpleObservation($obs_category#laboratory, CS_DDGDmpMedicalHistoryProblemItem#pathologic_urine_albumin_excretion)
+// TODO: $sct71628007 = "Abnormal presence of albumin (finding)" applicable?
+* insert DDGDmpSimpleObservation($obs_category#laboratory, $sct#71628007)
 * value[x] 1..1 MS
 * value[x] ^short = "Denotes whether patient shows pathological urine albumin excretion"
 * value[x] only CodeableConcept
