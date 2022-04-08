@@ -12,7 +12,7 @@ Alias: $BodyHeight = http://hl7.org/fhir/StructureDefinition/bodyheight
 Alias: $BloodPressure = http://hl7.org/fhir/StructureDefinition/bp
 Alias: $SocialHistory = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 
-
+Alias: $DmpPatient = DDGDmpPatient
 // Codes
 
 Alias: $CurrentSmoker = $lnc#64234-8

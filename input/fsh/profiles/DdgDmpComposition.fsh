@@ -23,7 +23,7 @@ must be structured in the Composition as the first entry of the document."""
 * category = $lnc#33248-6 "Diabetes Status"
 * category ^short = "High-level kind of a clinical document at a macro level"
 * subject 1..1 MS
-* subject only Reference(DDGDmpPatient)
+* subject only Reference($DmpPatient)
 * subject ^short = "Patient being subject of this document"
 * author 1..1 MS
 * author only Reference(DDGDmpPractitioner)
@@ -40,6 +40,11 @@ must be structured in the Composition as the first entry of the document."""
 * section contains
     consentEda 1..1 MS and
     consentRegistry 1..1 MS and
+    enrollmentReason 1..1 MS and
+    relevantEvents 1..1 MS and
+    emergencyInpatientTreatments 1..1 MS and
+    severeHypoglycemiaEvents 1..1 MS and
+    opthalmicRetinalExamination 1..1 MS and
     // TODO: "Einschreibung wegen?" with values "Asthma bronchiale KHK Diabetes mellitus Typ 1 Diabetes mellitus Typ 2 COPD Chronische Herzinsuffizienz Depression chronischer Rückenschmerz Osteoporose"
     medicalHistory 1.. MS and // TODO Best wording for "Anamnese- und Befunddaten"? Also this should probably also contain "Relevante Ereignisse" from DMP
     medications 1.. MS and
@@ -55,6 +60,26 @@ must be structured in the Composition as the first entry of the document."""
 * section[consentRegistry].entry 1..1 MS
 * section[consentRegistry].entry ^short = "Consent for participation in research registry"
 * section[consentRegistry].entry only Reference(DDGDmpConsentRegistry)
+
+* section[enrollmentReason].entry 1.. MS
+* section[enrollmentReason].entry ^short = "Reason why patient enrolled in DMP"
+* section[enrollmentReason].entry only Reference(DDGDmpEnrollmentReason)
+
+* section[relevantEvents].entry 1.. MS
+* section[relevantEvents].entry ^short = "Relevant events in the past"
+* section[relevantEvents].entry only Reference(DDGDmpRelevantEvents)
+
+* section[emergencyInpatientTreatments].entry 1..1 MS
+* section[emergencyInpatientTreatments].entry ^short = "Emergency inpatient treatment events since last documentation"
+* section[emergencyInpatientTreatments].entry only Reference(DDGDmpEmergencyInpatientTreatmentEvents)
+
+* section[severeHypoglycemiaEvents].entry 1..1 MS
+* section[severeHypoglycemiaEvents].entry ^short = "Severe hypoglycemia events since last documentation"
+* section[severeHypoglycemiaEvents].entry only Reference(DDGDmpSevereHypoglycemiaEvents)
+
+* section[opthalmicRetinalExamination].entry 1..1 MS
+* section[opthalmicRetinalExamination].entry ^short = "Severe hypoglycemia events since last documentation"
+* section[opthalmicRetinalExamination].entry only Reference(DDGDmpOpthalmicRetinalExamination)
 
 * section[medicalHistory].entry 1.. MS
 * section[medicalHistory].entry ^short = "Medical history and status of the patient"
@@ -137,9 +162,4 @@ must be structured in the Composition as the first entry of the document."""
 
 // Further treatment planning, enrollment reason, events since last documentation
 * extension contains
-    DDGDmpEnrollmentReason named enrollmentReason 1.. MS and // TODO: Or 1..1?
-    DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS and
-    DDGDmpRelevantEvents named relevantEvents 1..1 MS and
-    DDGDmpEmergencyInpatientTreatmentEvents named emergencyInpatientTreatmens 0..1 MS and
-    DDGDmpSevereHypoglycemiaEvents named severeHypoglycemiaEvents 0..1 and
-    DDGDmpOpthalmicRetinalExamination named opthalmicRetinalExamination 0..1 MS // or 1..1?
+    DDGDmpTreatmentPlanning named treatmentPlanning 1..1 MS
