@@ -47,8 +47,9 @@ must be structured in the Composition as the first entry of the document."""
     opthalmicRetinalExamination 1..1 MS and
     // TODO: "Einschreibung wegen?" with values "Asthma bronchiale KHK Diabetes mellitus Typ 1 Diabetes mellitus Typ 2 COPD Chronische Herzinsuffizienz Depression chronischer Rückenschmerz Osteoporose"
     medicalHistory 1.. MS and // TODO Best wording for "Anamnese- und Befunddaten"? Also this should probably also contain "Relevante Ereignisse" from DMP
+    footStatus 1.. and
     medications 0.. MS and
-    trainings 1.. MS and
+    educations 1.. MS and
     originalRepresentation 0..1 MS // TODO Only optionally embed PDF?
 
 // Details on section "documentation"
@@ -81,18 +82,18 @@ must be structured in the Composition as the first entry of the document."""
 * section[opthalmicRetinalExamination].entry ^short = "Severe hypoglycemia events since last documentation"
 * section[opthalmicRetinalExamination].entry only Reference(DDGDmpOpthalmicRetinalExamination)
 
-* section[medicalHistory].entry 1.. MS
-* section[medicalHistory].entry ^short = "Medical history and status of the patient"
-
 * section[medications].entry 1.. MS
 * section[medications].entry ^short = "Medications of the patient"
 * section[medications].entry only Reference(DDGDmpMedication or DDGDmpContraIndication)
 // * section[medications].entry only Reference(DDGDmpMedicalHistory) // TODO
 
-* section[trainings].entry 0.. MS
-* section[trainings].entry ^short = "Diabetes-related trainings"
-* section[trainings].entry only Reference(DDGDmpCompletedTrainingEncounter or DDGDmpFutureTrainingAppointment or DDGDmpMissedTraining)
 
+* section[educations].entry 0.. MS
+* section[educations].entry ^short = "Diabetes-related educations"
+* section[educations].entry only Reference(DDGDmpCompletededucationEncounter or DDGDmpFutureeducationAppointment or DDGDmpMissededucation)
+
+* section[medicalHistory].entry 1.. MS
+* section[medicalHistory].entry ^short = "Medical history and status of the patient"
 * section[medicalHistory].section ^slicing.discriminator.type = #pattern
 * section[medicalHistory].section ^slicing.discriminator.path = "code"
 * section[medicalHistory].section ^slicing.rules = #open
@@ -101,41 +102,32 @@ must be structured in the Composition as the first entry of the document."""
     bodyHeight 1..1 MS and
     smokingStatus 1..1 MS and
     bloodPressure 1..1 MS and
-    secondaryDiseases 0.. MS and
+    sequelae 0.. MS and
     hba1c 1..1 MS and
     pathologicUrineAlbuminExcretion 1..1 MS and
     estimatedGlomerularFiltrationRate 1..1 MS and
-    pulseStatus 1..1 MS and
-    sensitivityCheck 1..1 MS and
-    furtherRiskForUlcus 1.. MS and
     ulcus 1..1 MS and
     woundInfection 1..1 MS and
     injectionSite 1..1 MS and
     futureFeetInspectionInterval 1..1 MS and
-    lateEffects 1..1 MS
-
+    lateComplications 1..1 MS
 * section[medicalHistory].section[bodyWeight].entry 1..1 MS
-* section[medicalHistory].section[bodyWeight].entry only Reference($BodyWeight)
+* section[medicalHistory].section[bodyWeight].entry only Reference($DMPBodyWeight)
 * section[medicalHistory].section[bodyHeight].entry 1..1 MS
-* section[medicalHistory].section[bodyHeight].entry only Reference($BodyHeight)
+* section[medicalHistory].section[bodyHeight].entry only Reference($DMPBodyHeight)
 * section[medicalHistory].section[smokingStatus].entry 1..1 MS
 * section[medicalHistory].section[smokingStatus].entry only Reference(DDGDmpMedicalHistorySmokingStatus)
 * section[medicalHistory].section[bloodPressure].entry 1..1 MS
 * section[medicalHistory].section[bloodPressure].entry only Reference($BloodPressure)
-* section[medicalHistory].section[secondaryDiseases].entry 1..1 MS
-* section[medicalHistory].section[secondaryDiseases].entry only Reference(DDGDmpMedicalHistorySecondaryDiseases)
+* section[medicalHistory].section[sequelae].entry 1..1 MS
+* section[medicalHistory].section[sequelae].entry only Reference(DDGDmpMedicalHistorySequelae)
 * section[medicalHistory].section[hba1c].entry 1..1 MS
 * section[medicalHistory].section[hba1c].entry only Reference(DDGDmpMedicalHistoryHba1cMmol or DDGDmpMedicalHistoryHba1cPercent)
 * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry 1..1 MS
 * section[medicalHistory].section[pathologicUrineAlbuminExcretion].entry only Reference(DDGDmpMedicalHistoryPathologicUrineAlbuminExcretion)
 * section[medicalHistory].section[estimatedGlomerularFiltrationRate].entry 1..1 MS
 * section[medicalHistory].section[estimatedGlomerularFiltrationRate].entry only Reference(DDGDmpMedicalHistoryEgfr)
-* section[medicalHistory].section[pulseStatus].entry 1..1 MS
-* section[medicalHistory].section[pulseStatus].entry only Reference(DDGDmpMedicalHistoryPulseStatus)
-* section[medicalHistory].section[sensitivityCheck].entry 1..1
-* section[medicalHistory].section[sensitivityCheck].entry only Reference(DDGDmpMedicalHistorySensitivityCheck)
-* section[medicalHistory].section[furtherRiskForUlcus].entry 1.. MS
-* section[medicalHistory].section[furtherRiskForUlcus].entry only Reference(DDGDmpMedicalHistoryFurtherRiskUlcus)
+
 * section[medicalHistory].section[ulcus].entry 1..1 MS
 * section[medicalHistory].section[ulcus].entry only Reference(DDGDmpMedicalHistoryUlcus)
 * section[medicalHistory].section[woundInfection].entry 1..1 MS
@@ -143,8 +135,25 @@ must be structured in the Composition as the first entry of the document."""
 * section[medicalHistory].section[injectionSite].entry 1..1 MS
 * section[medicalHistory].section[injectionSite].entry only Reference(DDGDmpMedicalHistoryInjectionSite)
 // futureFeetInspectionInterval -> moved to treatment planning where it makes more sense (TODO ok?)
-* section[medicalHistory].section[lateEffects].entry 0.. MS
-* section[medicalHistory].section[lateEffects].entry only Reference(DDGDmpMedicalHistoryLateEffects)
+* section[medicalHistory].section[lateComplications].entry 0.. MS
+* section[medicalHistory].section[lateComplications].entry only Reference(DDGDmpMedicalHistorylateComplications)
+
+* section[footStatus].entry 1..1 MS
+* section[footStatus].entry ^short = "Foot status of the patient"
+* section[footStatus].section ^slicing.discriminator.type = #pattern
+* section[footStatus].section ^slicing.discriminator.path = "code"
+* section[footStatus].section ^slicing.rules = #open
+* section[footStatus].section contains // TODO: Define optionalities
+    pulseStatus 1..1 MS and
+    sensitivityCheck 1..1 MS and
+    furtherRiskForUlcus 1.. MS
+* section[footStatus].section[pulseStatus].entry 1..1 MS
+* section[footStatus].section[pulseStatus].entry only Reference(DDGDmpFootStatusPulseStatus)
+* section[footStatus].section[sensitivityCheck].entry 1..1
+* section[footStatus].section[sensitivityCheck].entry only Reference(DDGDmpMedicalHistorySensitivityCheck)
+* section[footStatus].section[furtherRiskForUlcus].entry 1.. MS
+* section[footStatus].section[furtherRiskForUlcus].entry only Reference(DDGDmpMedicalHistoryFurtherRiskUlcus)
+
 
 // Details on section "originalPresentation" for including the original PDF if available
 * section[originalRepresentation] ^short = "Contains the document's information in PDF format"

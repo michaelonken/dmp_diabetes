@@ -1,7 +1,7 @@
-ValueSet: DdgDmpLateEffects
+ValueSet: DdgDmpLateComplications
 Id: ddg-dmp-late-effects
-Title: "DDG DMP Late Effects"
-Description: "DDG DMP Late Effects"
+Title: "DDG DMP Late Complications"
+Description: "DDG DMP Late Complications"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"

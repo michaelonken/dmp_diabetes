@@ -16,7 +16,7 @@ Description: "DDG Medical History Smoking Status in DMP documents"
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Medical History Smoking Status"
 
-* insert DDGDmpSimpleObservation($obs_category#social-history, $lnc#64234-8)
+* insert DDGDmpSimpleObservation($obs_category#social-history, $lnc#72166-2)
 * value[x] 1..1 MS
 * value[x] ^short = "Denotes whether patient smokes or not"
 * value[x] only boolean
@@ -24,11 +24,11 @@ Description: "DDG Medical History Smoking Status in DMP documents"
 
 // -----------------------------------------------------------------------------
 
-Profile: DDGDmpMedicalHistorySecondaryDiseases
+Profile: DDGDmpMedicalHistorySequelae
 Parent: Condition
-Id: ddg-dmp-medical-history-secondary-diseases
-Title: "DDG DMP Medical History Secondary Diseases"
-Description: "DDG Medical History Secondary Diseases in DMP documents"
+Id: ddg-dmp-medical-history-sequeale
+Title: "DDG DMP Medical History Sequelae"
+Description: "DDG Medical History Sequelae in DMP documents"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"
@@ -38,7 +38,7 @@ Description: "DDG Medical History Secondary Diseases in DMP documents"
 * ^contact.telecom.value = "https://www.open-connections.de/"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
-* . ^short = "DDG DMP Medical History Secondary Diseases"
+* . ^short = "DDG DMP Medical History Sequelae"
 
 // TODO: Do we want to allow anything but clinicalStaus = "active"?
 // * clinicalStatus 0..1 MS
@@ -46,7 +46,7 @@ Description: "DDG Medical History Secondary Diseases in DMP documents"
 * category 1..1 MS
 * category = $cond_category#problem-list-item
 * code 1..1 MS
-* code from DdgDmpSecondaryDiseases (required)
+* code from DdgDmpSequelae (required)
 * subject 1..1 MS
 * subject only Reference($DmpPatient)
 
@@ -65,7 +65,7 @@ RuleSet: DDGDmpMedicalHistoryHba1c(unit)
 * category 1..1 MS
 * category = $obs_category#laboratory
 * code 1..1 MS
-* code = $sct#43396009
+* code = $sct#43396009 //  Hemoglobin A1c measurement (procedure)
 * subject only Reference($DmpPatient)
 * effectiveDateTime 1..1 MS
 * value[x] 1..1 MS
@@ -110,7 +110,7 @@ Description: "DDG Medical History Urine Albumin Excretion in DMP documents"
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Medical History Urine Albumin Excretion"
 // TODO: $sct71628007 = "Abnormal presence of albumin (finding)" applicable?
-* insert DDGDmpSimpleObservation($obs_category#laboratory, $sct#71628007)
+* insert DDGDmpSimpleObservation($obs_category#laboratory, $sct#271075006) //  Urine albumin/creatinine ratio measurement (procedure)
 * value[x] 1..1 MS
 * value[x] ^short = "Denotes whether patient shows pathological urine albumin excretion"
 * value[x] only CodeableConcept
@@ -134,7 +134,7 @@ Description: "DDG Medical History Estimated Glomerular Filtration Rate (eGFR) in
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Medical History Estimated Glomerular Filtration Rate (eGFR) in DMP documents"
-* insert DDGDmpSimpleObservation($obs_category#laboratory, CS_DDGDmpMedicalHistoryProblemItem#estimated_glomerular_filtration_rate)
+* insert DDGDmpSimpleObservation($obs_category#laboratory, $sct#80274001)
 // TODO Description/Invariant: Either value or dataAbsentReason has to be provided
 * value[x] 0..1 MS
 * value[x] ^short = "Measured eGFR"
@@ -149,11 +149,11 @@ Description: "DDG Medical History Estimated Glomerular Filtration Rate (eGFR) in
 
 // -----------------------------------------------------------------------------
 
-Profile: DDGDmpMedicalHistoryPulseStatus
+Profile: DDGDmpFootStatusPulseStatus
 Parent: Observation
 Id: ddg-dmp-medical-history-pulse-status
-Title: "DDG DMP Medical History Pulse Status"
-Description: "DDG Medical History Pulse Status in DMP documents"
+Title: "DDG DMP T2DM Pulse Status"
+Description: "DDG DMP T2DM Pulse Status"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"
@@ -244,8 +244,7 @@ Description: "DDG Medical History Ulcus in DMP documents"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
 * . ^short = "DDG DMP Medical History Ulcus"
-
-* insert DDGDmpSimpleObservation($obs_category#exam, $sct#56208002) // Code for "Ulcer (morphologic abnormality)"
+* insert DDGDmpSimpleObservation($obs_category#exam, $sct#713130008) // Code for " Assessment of diabetic foot ulcer (procedure)"
 * valueCodeableConcept MS
 * valueCodeableConcept from DdgDmpUlcus (required)
 * dataAbsentReason 0..1 MS
@@ -313,11 +312,11 @@ Description: "DDG Medical History Injection Site (for Insulin Therapy) in DMP do
 
 // -----------------------------------------------------------------------------
 
-Profile: DDGDmpMedicalHistoryLateEffects
+Profile: DDGDmpMedicalHistorylateComplications
 Parent: Condition
 Id: ddg-dmp-medical-history-late-effects
-Title: "DDG DMP Medical History Late Effects"
-Description: "DDG Medical History Late Effects in DMP documents"
+Title: "DDG DMP Medical History Late Complications"
+Description: "DDG Medical History Late Complications in DMP documents"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"
@@ -327,7 +326,7 @@ Description: "DDG Medical History Late Effects in DMP documents"
 * ^contact.telecom.value = "https://www.open-connections.de/"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
-* . ^short = "DDG DMP Medical History Late Effects"
+* . ^short = "DDG DMP Medical History Late Complications"
 
 // TODO: Do we want to allow anything but clinicalStaus = "active"?
 // * clinicalStatus 0..1 MS
@@ -335,6 +334,6 @@ Description: "DDG Medical History Late Effects in DMP documents"
 * category 1..1 MS
 * category = $cond_category#problem-list-item
 * code 1..1 MS
-* code from DdgDmpLateEffects (required)
+* code from DdgDmpLateComplications (required)
 * subject 1..1 MS
 * subject only Reference($DmpPatient)

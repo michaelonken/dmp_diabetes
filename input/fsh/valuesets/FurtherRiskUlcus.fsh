@@ -22,7 +22,7 @@ Description: "DDG DMP Further Risk Ulcus"
 // nein
 // nicht untersucht
 
-* $sct#229844004 // Deformity of foot
+* $sct#713130008 // foot ulcer status procedure
 * CS_DDGDmpMedicalHistoryFurtherRiskUlcus#hypercatosis_with_hemorrhage
 * CS_DDGDmpMedicalHistoryFurtherRiskUlcus#condition_after_ulcus
 * CS_DDGDmpMedicalHistoryFurtherRiskUlcus#condition_after_amputation

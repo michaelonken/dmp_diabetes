@@ -9,6 +9,6 @@ RuleSet: DDGDmpSimpleObservation(category, code)
 * category = {category}
 * code 1..1 MS
 * code = {code}
-* subject only Reference($DmpPatient)
+* subject only Reference($DMPPatient)
 * effectiveDateTime 1..1 MS
 

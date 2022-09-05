@@ -19,7 +19,7 @@ Description: "Consent for the DDG DMP Registry"
 * scope 1..1 MS
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy "Agreement to collect, access, use or disclose (share) information"
 * category 1..1 MS
-* category = $lnc#59284-0 // Code for "Consent Document"
+* category = $sct#414925007 // Obtaining Consent
 
 * patient 1..1 MS
 * patient only Reference($DmpPatient)

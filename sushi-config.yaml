@@ -5,7 +5,7 @@
 # https://confluence.hl7.org/display/FHIR/NPM+Package+Specification#NPMPackageSpecification-Packagename
 id: de.deutsche-diabetes-gesellschaft.fhir.ig.dmp-diabetes
 canonical: http://deutsche-diabetes-gesellschaft.de/fhir/ig/dmp-diabetes
-name: FHIR IG for Diabetes DMP in Germany
+name: FHIR IG for Diabetes 2 DMP in Germany
 title: "Diabetes DMP IG (R4)"
 description: "This Implementation Guide aims at modelling the current Disease Management Program (DMP) documents used in Germany for Diabetes. The project is work in progress."
 status: draft
@@ -28,6 +28,7 @@ contact:
 
 dependencies:
   # ch.fhir.ig.ch-core: 2.0.0
+  # kbv.basis: 1.3.0
 
 pages:
   index.md:

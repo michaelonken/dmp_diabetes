@@ -1,8 +1,8 @@
-Profile: DDGDmpCompletedTrainingEncounter
+Profile: DDGDmpCompletededucationEncounter
 Parent: Encounter
-Id: ddg-dmp-completed-training-encounter
-Title: "DDG DMP Completed Training"
-Description: "DDG completed training in DMP documents"
+Id: ddg-dmp-completed-education-encounter
+Title: "DDG DMP Completed education"
+Description: "DDG completed education in DMP documents"
 * ^version = "0.0.1"
 * ^status = #draft
 * ^date = "2022-03-15T00:00:00+00:00"
@@ -12,10 +12,10 @@ Description: "DDG completed training in DMP documents"
 * ^contact.telecom.value = "https://www.open-connections.de/"
 * ^jurisdiction = urn:iso:std:iso:3166#DEU
 * ^copyright = "CC-BY-SA-4.0"
-* . ^short = "DDG DMP completed training"
+* . ^short = "DDG DMP completed education"
 
 * status MS
 * status = #finished
 * serviceType MS
 * serviceType 1..1
-* serviceType from VS_DdgDmpTrainingServiceType
+* serviceType from VS_DdgDmpEducationServiceType

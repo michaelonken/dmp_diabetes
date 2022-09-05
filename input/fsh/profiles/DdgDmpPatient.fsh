@@ -25,3 +25,5 @@ Description: "DDG Patient participating in DMP"
   * city 0..1 MS
   * postalCode 0..1 MS
   * country 0..1 MS
+* deceasedBoolean 0..1 MS
+* deceasedDateTime 0..1 MS

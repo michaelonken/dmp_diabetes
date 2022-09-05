@@ -21,7 +21,7 @@
 Profile: DDGDmpOpthalmicRetinalExamination
 Parent: Procedure
 Id: ddg-dmp-opthalmic-retinal-examination
-Title: "DDG DMP Ophthalmic Retinal Examination"
+Title: "DDG DMP T2DM Retinal Examination"
 Description: "Ophthalmic retinal examination since last documentation"
 * ^version = "0.0.1"
 * ^status = #draft
@@ -38,7 +38,7 @@ Description: "Ophthalmic retinal examination since last documentation"
 * category 1..1 MS
 * category = $sct#103693007 // Diagnostic procedure
 * code 1..1 MS
-* code = $sct#390735007 // Retinal Screening (TOOD: acceptable?)
+* code = $sct#36228007 // Ophthalmic examination and evaluation
 * subject only Reference ($DmpPatient)
 * bodySite 1..1 MS
 * bodySite = $sct#5665001 //  Retina

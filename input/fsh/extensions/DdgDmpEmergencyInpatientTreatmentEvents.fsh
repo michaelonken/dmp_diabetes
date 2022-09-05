@@ -41,4 +41,4 @@ Description: "DDG DMP Emergency Inpatient Treatment Events"
 * value[x] only integer
 * valueInteger 0..1
 * dataAbsentReason 0..1 MS
-* dataAbsentReason = $sct#416237000 // Procedure not don
+* dataAbsentReason = $sct#416237000 // Procedure not done
